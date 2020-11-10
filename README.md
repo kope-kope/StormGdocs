@@ -89,4 +89,154 @@ The `/token ` endpoint allows you to generate an access token, for authorizing o
 | grant_type 	| yes 	| Set as client_credentials 	|
 | scope 	| yes 	| Set as profile 	|
 
-## 
+<!-- tabs:start -->
+
+#### ** cURL **
+
+``` bash
+curl https://api.staging.storm.trium.ng/token
+ --d scope=profile 
+ -d grant_type=client_credentials 
+ -u 9g3p7e5yp1m4zyk89r1vsz4kk0xh:4c0763b8f583427f9a1380eff9273076
+```
+#### ** node.js **
+
+``` javascript
+var request = require('request');
+var options = {
+  'method': 'POST',
+  'url': 'https://api.staging.storm.trium.ng/token',
+  'headers': {
+  },
+  auth:{
+    username: api_key,
+    password: secret_key,
+  },
+  form: {
+    'grant_type': 'client_credentials',
+    'scope': 'profile'
+  }
+};
+request(options, function (error, response) {
+  if (error) throw new Error(error);
+  console.log(response.body);
+});
+```
+#### ** Response **
+
+```json
+{
+    "status": 201,
+    "data": {
+        "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXJ0bmVySWQiOiJkZDE3MmE3Zi0zM2I4LTQwZjQtODE5ZS0zMDg3M2EyZWE0NjIiLCJpZCI6ImY1ZTg3OGVhLTA4MjEtNDZmYS04YjYxLTE3MzdhNWJhN2U2OCIsIm1vZGUiOiJsaXZlIiwiaWF0IjoxNjA0OTk4NjYyLCJleHAiOjE2MTAxODI2NjJ9.NK-ELjQr18_bwpFLIXiQLeAaahgfqOlPRPw1t3Sccu8",
+        "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXJ0bmVySWQiOiJkZDE3MmE3Zi0zM2I4LTQwZjQtODE5ZS0zMDg3M2EyZWE0NjIiLCJpYXQiOjE2MDQ5OTg2NjIsImV4cCI6MTYxMDE4MjY2Mn0.iWt11LCIf7l20q9YyjyoP5n08Xs-TPCe99mx5TBC63Q",
+        "token_type": "Bearer",
+        "expires_in": 1607590662030
+    }
+}
+
+```
+<!-- tabs:end -->
+
+# Investors
+The investors API enables you to create and manage investors
+
+## Headers
+| Field         	| Required 	| Description                        	|
+|---------------	|----------	|------------------------------------	|
+| Authorization 	| String   	| Set value to Bearer `access_token` 	|
+| Content type  	| String   	| Set value to `application/json`    	|
+
+## Body
+``` json
+{
+    "personal":{
+        "title": "Mr.",
+        "surname": "Schoon",
+        "first_name": "Denji",
+        "other_names": "Baton",
+        "gender": "M",
+        "phone": 1,
+        "date_of_birth": "05-21-1978",
+        "email_address": "abc@testmenow.com",
+        "home_phone": "080334588888"
+    },
+    "location":{
+        "address": "Ajibade Street",
+        "country": "Nigeria",
+        "state": "Enugu",
+        "nationality": "Nigerian",
+        "state_of_origin": "Abia",
+        "city": "Aba",
+        "lga": "Ohafia"
+    },
+    "financial":{
+        "bank_account_number": "3032308890",
+        "bank_account_name": "Humpty Groot",
+        "bank_name": "First Bank of Nigeria",
+        "bank_code": "011",
+        "bvn": "22310000101"
+    },
+    "employment":{
+        "company_name": "Not Applicable",
+        "employment_type": "Employee",
+        "occupation": "worker"
+    },
+    "kyc":{
+        "identity_type": "International Passport",
+        "identity_number": "1122004456",
+        "expiry_date": "02-01-2030",
+        "politically_exposed": "No"
+    },
+    "next_of_kin":{
+        "name": "Abba Moro",
+        "address": "Somewhere in Lag",
+        "email": "shaq@yahoo.com",
+        "phone_number": "09012345678",
+        "relationship": "brother"
+    }
+}
+```
+<!-- tabs:start -->
+
+#### ** cURL **
+
+``` bash
+curl -X POST https://api.staging.storm.trium.ng/partners/investors 
+-d "@body.json" 
+-H "Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXJ0bmVySWQiOiJkZDE3MmE3Zi0zM2I4LTQwZjQtODE5ZS0zMDg3M2EyZWE0NjIiLCJpZCI6ImY1ZTg3OGVhLTA4MjEtNDZmYS04YjYxLTE3MzdhNWJhN2U2OCIsIm1vZGUiOiJsaXZlIiwiaWF0IjoxNjA0OTk4NjYyLCJleHAiOjE2MTAxODI2NjJ9.NK-ELjQr18_bwpFLIXiQLeAaahgfqOlPRPw1t3Sccu8" 
+-H "Content-Type:application/json"
+```
+#### ** node.js **
+
+``` javascript
+var request = require('request');
+var options = {
+  'method': 'POST',
+  'url': 'https://api.staging.storm.trium.ng/partners/investors',
+  'headers': {
+    'authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXJ0bmVySWQiOiJkZDE3MmE3Zi0zM2I4LTQwZjQtODE5ZS0zMDg3M2EyZWE0NjIiLCJpZCI6ImY1ZTg3OGVhLTA4MjEtNDZmYS04YjYxLTE3MzdhNWJhN2U2OCIsIm1vZGUiOiJsaXZlIiwiaWF0IjoxNjA0OTk4NjYyLCJleHAiOjE2MTAxODI2NjJ9.NK-ELjQr18_bwpFLIXiQLeAaahgfqOlPRPw1t3Sccu8'
+  },
+  body: "{\n    \"personal\":{\n\"title\":\"Mr.\",\n\"surname\":\"Tosin\",\n\"first_name\": \"Schoon\",\n\"other_names\": \"Stoom\",\n        \"gender\": \"M\",\n        \"phone\": \"07061342599\",\n        \"date_of_birth\": \"05-21-1978\",\n        \"email_address\": \"testcosec8@sharklasers.com\",\n        \"home_phone\": \"080334551761\"\n    },\n    \"location\":{\n        \"address\": \"Test some address\",\n        \"country\": \"Nigeria\",\n        \"state_of_origin\": \"Abia\",\n        \"city\": \"Aba\",\n        \"lga\": \"Ohafia\"\n    },\n    \"financial\":{\n        \"bank_account_number\": \"3032308890\",\n        \"bank_name\": \"First Bank of Nigeria\",\n        \"bvn\": \"22310000111\"\n    },\n    \"employment\":{\n        \"company_name\": \"Not Applicable\",\n        \"employment_type\": \"Employee\",\n        \"occupation\": \"worker\"\n    },\n    \"kyc\":{\n        \"identity_type\": \"International Passport\",\n        \"identity_number\": \"1122004456\",\n        \"expiry_date\": \"04-01-2030\",\n        \"politically_exposed\": \"no\"\n    },\n    \"next_of_kin\":{\n        \"name\": \"Abba Moro\",\n        \"address\": \"Somewhere in Lag\",\n        \"email\": \"shaq@yahoo.com\",\n        \"phone_number\": \"09012345678\",\n        \"relationship\": \"brother\"\n    }\n
+};
+request(options, function (error, response) {
+  if (error) throw new Error(error);
+  console.log(response.body);
+});
+});
+```
+#### ** Response **
+
+```json
+{
+  "status": 201,
+  "data": {
+    "status": "Pending",
+    "investor_no": 1382231,
+    "investor_id": "cd3ec9f9-2b17-40dd-9d31-1aae69f295fe"
+  }
+}
+
+```
+<!-- tabs:end -->
+

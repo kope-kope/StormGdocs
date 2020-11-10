@@ -11,9 +11,9 @@
   * [Errors](README.md#Errors)
 
 
-  * [API Endpoints]()
+  * Endpoints
   
-  * [Auth]()
+  * [Access Token]()
   *[Investors](README.md#Investors)  
     * [Create Investor](create_investor.md#overview)
     * [Update Investor](update_investor.md)

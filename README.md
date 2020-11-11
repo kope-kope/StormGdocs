@@ -6,7 +6,8 @@ Figure out how to integrate StormGarden's APIs into your application
 The Stormgarden API allows you (has a Stormgarden partner) to programmatically onboard investors with a top broker enabling them to buy and sell securities listed on the Nigerian Stock Exchange through your application.
 
 > # Before you Start
-[Register as a partner](http://console.staging.storm.trium.ng/settings/api). You will be provided with test API and Secret keys, that you can use to test the endpoints. You should include `/test ` 
+>[Register as a partner](http://console.staging.storm.trium.ng/settings/api). You will be provided with test API and Secret keys, that you can use to test the endpoints. 
+> You should include `/test ` in the URL when using test keys i.e `https://api.staging.storm.trium.ng/test/transactions`
 
 # Example Requests
 We give sample API calls close to every endpoint using cURL. You simply have to insert  your specific values, and you can test the calls from the command line. You can [read this article](https://linuxize.com/post/curl-rest-api/) to learn how to use cURL with APIs.

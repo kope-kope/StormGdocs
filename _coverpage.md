@@ -1,6 +1,7 @@
 
 # StormGarden APIs
 
+Integrate easily to your application to:
 - Onboard Investors
-- Realtime Market Information
-- Investors can BUY or SELL through your application
+- Get Realtime Market Information
+- Enable your investors BUY and SELL securities listed on the Nigerian Stock Exchange

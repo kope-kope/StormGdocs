@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>StormgGarden</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;300&display=swap"
+      rel="stylesheet"
+    />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/docsify/4.11.6/themes/vue.min.css" integrity="sha512-loz6WMDfAB7GhN0FpY3cSO2hdZyRhkjauRPWv4XKnJAC6Dagp2UAwM79KFLqZ48E9arCUPWDvdBaGJl60igm5g==" crossorigin="anonymous" />
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/vue.css">
-<script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/docsify/4.11.6/plugins/search.min.js" integrity="sha512-SYBVnmdscyK3SLLzAqsyOqPayegu1mAYkPQwJHDT4PTAdkWUIziTtCVUIcIUENyBKYKOnGsyHDJqGqA+b1CrvA==" crossorigin="anonymous"></script>
 </head>
 <body>
   <div id="app">Please wait...</div>
@@ -17,7 +18,6 @@
     window.$docsify = {
       name: 'StormgGarden APIs',
       coverpage: true,
-      basePath: '/',
       loadSidebar: true,
       search: {
         maxAge: 3600000, // 过期时间，单位毫秒，默认一天
@@ -25,20 +25,15 @@
         placeholder: 'Search',
         noData: 'No Results!',
         depth: 1 // 搜索标题的最大程级, 1 - 6
-      },
-      themeable: {
-        responsiveTables: false // default
       }
     }
   </script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/docsify-themeable/dist/js/docsify-themeable.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/docsify-tabs/dist/docsify-tabs.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/external-script.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-bash.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-java.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-go.min.js"></script>

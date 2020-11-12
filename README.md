@@ -7,10 +7,10 @@ The Stormgarden API allows you (has a Stormgarden partner) to programmatically o
 
 > # Before you Start
 >[Register as a partner](http://console.staging.storm.trium.ng/settings/api). You will be provided with test API and Secret keys, that you can use to test the endpoints. 
-> You should include `/test ` in the URL when using test keys i.e `https://api.staging.storm.trium.ng/test/transactions`
+> You should include `/test ` in the URL when using test keys, for example `https://api.staging.storm.trium.ng/test/transactions`
 
 # Example Requests
-We give sample API calls close to every endpoint using cURL. You simply have to insert  your specific values, and you can test the calls from the command line. You can [read this article](https://linuxize.com/post/curl-rest-api/) to learn how to use cURL with APIs.
+We give sample API calls close to every endpoint using cURL. You simply have to insert  your specific values, and you can test the calls from the command line. You can [read this article](https://www.baeldung.com/curl-rest) to learn how to use cURL with APIs.
 
 Not familiar with cURL? You can use [Postman](https://www.postman.com/downloads/). Postman is a collaboration environment for API development including making HTTP requests. Run the [Stormgarden APIs Collection](https://documenter.getpostman.com/view/11930516/TVYF6xeD) in Postman to make testing quicker and easier.
 

@@ -63,15 +63,26 @@ Authorization headers should be set in this format : `Authorization: Bearer acce
 > Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXJ0bmVySWQiOiJkZDE3MmE3Zi0zM2I4LTQwZjQtODE5ZS0zMDg3M2EyZWE0NjIiLCJpZCI6Ijk5NzFhZjdjLTc0NjEtNDI3ZS05OWUwLWM5ZDRjM2M2NzMzYiIsIm1vZGUiOiJsaXZlIiwiaWF0IjoxNjA0NDE0NzI1LCJleHAiOjE2MDk1OTg3MjV9.FoHqZEfrTegIF8w72BZDrmhtb_Wt7rDsAvYxLD1ey2A 
 
 # Errors
-To aid integration, we set up custom error codes for error scenarios that you might encounter while integrating to our APIs. See the list here:
+We use standard HTTP response codes for success and failure notifications. In general, 200 HTTP codes correspond to success, 40X codes are for developer- or user-related failures which is further classified with custom error codes, and 50X codes are for DartInvest-related issues.
+
+## Sample Error Schema
+```JSON
+{
+    "status": [integer],
+    "errors": [
+      "code" : 200x
+      "message" : [string]
+    ]
+}
+```
 
 # Custom Error Codes
 
 | **Error Codes** | **Description** |
 |-------------|-------------|
-| 2001        |        |
-| 2002          |             |
-|             |             |
+| 2001        |             |
+| 2002        |             |
+|          |             |
 
 # Access Token
 *POST* `/token`

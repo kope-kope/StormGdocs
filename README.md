@@ -1,27 +1,27 @@
 # Introduction
-Figure out how to integrate DartInvest's APIs into your application
+Figure out how to integrate Dart Invest's APIs into your application
  
 
 # Basics
-The DartInvest API allows you (has a DartInvest partner) to programmatically onboard investors with a top broker enabling them to buy and sell securities listed on the Nigerian Stock Exchange through your application.
+The Dart Invest API allows you (has a Dart Invest partner) to programmatically onboard investors with a top broker enabling them to buy and sell securities listed on the Nigerian Stock Exchange through your application.
 
 > # Before you Start
->[Register as a partner](http://console.staging.storm.trium.ng/settings/api). You will be provided with test API and Secret keys, that you can use to test the endpoints. 
-> You should include `/test ` in the URL when using test keys, for example `https://api.staging.storm.trium.ng/test/transactions`
+>[Register as a partner](http://console.staging.storm.trium.ng/settings/api). You will be provided with a test API and Secret keys, that you can use to test the endpoints.
+> You should include `/test ` in the URL when using test keys, for example, `https://api.staging.storm.trium.ng/test/transactions`
 
 # Example Requests
-We give sample API calls close to every endpoint using cURL. You simply have to insert  your specific values, and you can test the calls from the command line. You can [read this article](https://www.baeldung.com/curl-rest) to learn how to use cURL with APIs.
+We give sample API calls close to every endpoint using cURL. You simply have to insert your specific values, and you can test the calls from the command line. You can [read this article](https://www.baeldung.com/curl-rest) to learn how to use cURL with APIs.
 
-Not familiar with cURL? You can use [Postman](https://www.postman.com/downloads/). Postman is a collaboration environment for API development including making HTTP requests. Run the [DartInvest APIs Collection](https://documenter.getpostman.com/view/11930516/TVYF6xeD) in Postman to make testing quicker and easier.
+Not familiar with cURL? You can use [Postman](https://www.postman.com/downloads/). Postman is a collaboration environment for API development including making HTTP requests. Run the [Dart Invest APIs Collection](https://documenter.getpostman.com/view/11930516/TVYF6xeD) in Postman to make testing quicker and easier.
 
 # Requests and Responses
-The request and response bodies are formatted in JSON. The Content-type for all responses is set to `application/json`. 
+The request and response bodies are formatted in JSON. The Content-type for all responses is set to `application/JSON`. 
 Successful and Error responses are in the following formats:
 
 <!-- tabs:start -->
 #### ** Successful **
 
-```JSON
+```json
 {
     "status": [integer],
     "data": [object]
@@ -29,7 +29,7 @@ Successful and Error responses are in the following formats:
 ```
 #### ** Error **
 
-```JSON
+```json
 {
     "status": [integer],
     "errors": [
@@ -40,7 +40,7 @@ Successful and Error responses are in the following formats:
 ```
 <!-- tabs:end -->
 
-The status key contains the HTTP status code in order to determine the result of an API call, if it was successful call. Typicall, `2xx` indicates that a request was successful.
+The status key contains the HTTP status code to determine the result of an API call if it was a successful call. Typically, `2xx` indicates that a request was successful.
 
 The data key has the result of a request. Its data type is an object (or an array) depending on the request made. A request to GET an investor's details returns an object in the data key, while a request to GET an investor's portfolio returns an array in the data key.
 
@@ -53,7 +53,7 @@ API calls are further authenticated by including your access token in the author
 
 To generate your access token, call the [Access Token](#Access_Token) endpoint with your API and Secret keys. Generally, access token generated from test keys authenticates the test endpoints, while live endpoints are authenticated with access token generated from live keys.
 
-Authorization headers should be set in this format : `Authorization: Bearer access_token`
+Authorization headers should be set in this format: `Authorization: Bearer access_token`
 
 
 
@@ -63,10 +63,10 @@ Authorization headers should be set in this format : `Authorization: Bearer acce
 > Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXJ0bmVySWQiOiJkZDE3MmE3Zi0zM2I4LTQwZjQtODE5ZS0zMDg3M2EyZWE0NjIiLCJpZCI6Ijk5NzFhZjdjLTc0NjEtNDI3ZS05OWUwLWM5ZDRjM2M2NzMzYiIsIm1vZGUiOiJsaXZlIiwiaWF0IjoxNjA0NDE0NzI1LCJleHAiOjE2MDk1OTg3MjV9.FoHqZEfrTegIF8w72BZDrmhtb_Wt7rDsAvYxLD1ey2A 
 
 # Errors
-We use standard HTTP response codes for success and failure notifications. In general, 200 HTTP codes correspond to success, 40X codes are for developer- or user-related failures which is further classified with custom error codes, and 50X codes are for DartInvest-related issues.
+We use standard HTTP response codes for success and failure notifications. In general, 200 HTTP codes correspond to success, 40X codes are for developer- or user-related failures which are further classified with custom error codes, and 50X codes are for Dart Invest-related issues.
 
 ## Sample Error Schema
-```JSON
+```json
 {
     "status": [integer],
     "errors": [
@@ -91,16 +91,16 @@ This API allows you to generate an access token, for authorizing other API calls
 
 ### Authorization
 
-| Field 	| Data type 	| Description 	|
-|-	|-	|-	|
-| Username 	| String	| Set value to API key 	|
-| Password 	| String 	| Set value to Secret key 	|
+| Field   | Data type   | Description   |
+|-  |-  |-  |
+| Username  | String  | Set value to API key  |
+| Password  | String  | Set value to Secret key   |
 
 ### Body Params
-| Field 	| Data type	| Description 	|
-|-	|-	|-	|
-| grant_type 	| String 	| Set as client_credentials 	|
-| scope 	| String 	| Set as profile 	|
+| Field   | Data type | Description   |
+|-  |-  |-  |
+| grant_type  | String  | Set as client_credentials   |
+| scope   | String  | Set as profile  |
 
 <!-- tabs:start -->
 
@@ -158,10 +158,10 @@ The investors API enables you to create and manage investors
 *POST* `/partners/investors`
 
 ### Headers
-| Field         	| Data type 	| Description                        	|
-|---------------	|----------	|------------------------------------	|
-| Authorization 	| String   	| Set value to Bearer `access_token` 	|
-| Content type  	| String   	| Set value to `application/json`    	|
+| Field           | Data type   | Description                         |
+|---------------  |---------- |------------------------------------ |
+| Authorization   | String    | Set value to Bearer `access_token`  |
+| Content type    | String    | Set value to `application/json`     |
 
 ## Body
 ``` json
@@ -243,7 +243,7 @@ request(options, function (error, response) {
 ```
 #### ** Response **
 
-```json
+```JSON
 {
   "status": 201,
   "data": {
@@ -258,13 +258,13 @@ request(options, function (error, response) {
 
 ## Update Investor
 *PUT* `/partners/investor/:id`
-Update investor's details, you can only update the details of `active` inevestors
+Update investor's details, you can only update the details of `active` investors
 
 ### Headers
-| Field         	| Data type	| Description                        	|
-|---------------	|----------	|------------------------------------	|
-| Authorization 	| String   	| Set value to Bearer `access_token` 	|
-| Content type  	| String   	| Set value to `application/json`    	|
+| Field           | Data type | Description                         |
+|---------------  |---------- |------------------------------------ |
+| Authorization   | String    | Set value to Bearer `access_token`  |
+| Content type    | String    | Set value to `application/json`     |
 
 ## Body
 ``` json
@@ -330,7 +330,7 @@ request(options, function (error, response) {
 ```
 #### ** Response **
 
-```json
+```JSON
 {
   "status": 200,
   "data": {
@@ -344,13 +344,13 @@ request(options, function (error, response) {
 ## Change Investor Status 
 *PUT* `/partners/investor/status/:id`
 
-Activate or Deactivate an investor, set status to `true` to activate an investor, `false` to deactivate an investor
+Activate or Deactivate an investor, set the status to `true` to activate an investor, `false` to deactivate an investor
 
 ## Headers
-| Field         	| Data type 	| Description                        	|
-|---------------	|----------	|------------------------------------	|
-| Authorization 	| String   	| Set value to Bearer `access_token` 	|
-| Content type  	| String   	| Set value to `application/json`    	|
+| Field           | Data type   | Description                         |
+|---------------  |---------- |------------------------------------ |
+| Authorization   | String    | Set value to Bearer `access_token`  |
+| Content type    | String    | Set value to `application/json`     |
 
 ## Body
 ``` json
@@ -391,7 +391,7 @@ request(options, function (error, response) {
 ```
 #### ** Response **
 
-```json
+```JSON
 {
     "status": 200,
     "data": {
@@ -403,24 +403,25 @@ request(options, function (error, response) {
 
 ## List Investors
 *GET* `/partners/investors`
-List investors created
+
+Returns a list of investors created
 
 ### Headers
-| Field         	| Data type 	| Description                        	|
-|---------------	|----------	|------------------------------------	|
-| Authorization 	| String   	| Set value to Bearer `access_token` 	|
+| Field           | Data type   | Description                         |
+|---------------  |---------- |------------------------------------ |
+| Authorization   | String    | Set value to Bearer `access_token`  |
 
 ### Query Params
 
-| Field         	| Data type 	| Description                                                                                         	|
-|---------------	|-----------	|-----------------------------------------------------------------------------------------------------	|
-| status        	| String    	| Filter investor by status, status can be active, pending and pending_kyc_approval and inactive      	|
-| name          	| String    	| Specify surname of the investor                                                                     	|
-| page_number   	| Integer   	| Specify the page you want to retrieve, if not specified, we set to a value of 1 by default          	|
-| page_limit    	| Number    	| Specify the investor count retrieved per page, if not specified, we set to a value of 25 by default 	|
-| email         	| String    	| Specify the email of the investor                                                                   	|
-| investor_no   	| Integer   	| Specify the investor number of the investor you want to retrieve                                    	|
-| created_month 	| Datetime  	| Specify the month and year for which to start listing investors e.g `11-2020`                       	|
+| Field           | Data type   | Description                                                                                           |
+|---------------  |-----------  |-----------------------------------------------------------------------------------------------------  |
+| status          | String      | Filter investor by status, status can be active, pending and pending_kyc_approval and inactive        |
+| name            | String      | Specify surname of the investor                                                                       |
+| page_number     | Integer     | Specify the page you want to retrieve, if not specified, we set to a value of 1 by default            |
+| page_limit      | Number      | Specify the investor count retrieved per page, if not specified, we set to a value of 25 by default   |
+| email           | String      | Specify the email of the investor                                                                     |
+| investor_no     | Integer     | Specify the investor number of the investor you want to retrieve                                      |
+| created_month   | Datetime    | Specify the month and year for which to start listing investors e.g `11-2020`                         |
 
 <!-- tabs:start -->
 
@@ -428,7 +429,7 @@ List investors created
 
 ``` bash
 curl -X GET https://api.staging.storm.trium.ng/partners/investors?created_month=10-2020
--H "Authorization:Bearer access_token"
+-H "Authorization: Bearer access_token"
 ```
 #### ** Node **
 
@@ -449,7 +450,7 @@ request(options, function (error, response) {
 ```
 #### ** Response **
 
-```json
+```JSON
 {
     "status": 200,
     "data": {
@@ -575,18 +576,19 @@ request(options, function (error, response) {
 
 ## Fetch Investor
 *GET* `/partners/investors/:id`
-Get the details of your investors
+
+Fetch the details of a specific investor using the Investor ID
 
 ### Headers
-| Field         	| Data type 	| Description                        	|
-|---------------	|----------	|------------------------------------	|
-| Authorization 	| String   	| Set value to Bearer `access_token` 	|
+| Field           | Data type   | Description                         |
+|---------------  |---------- |------------------------------------ |
+| Authorization   | String    | Set value to Bearer `access_token`  |
 
 ### Path Param
 
-| Field         	| Data type 	| Description                                                                                         	|
-|---------------	|-----------	|-----------------------------------------------------------------------------------------------------	|
-| id       	| String           	| Specify the desired investor's id to fetch                                                                	|
+| Field           | Data type   | Description                                                                                           |
+|---------------  |-----------  |-----------------------------------------------------------------------------------------------------  |
+| id        | String            | Specify the desired investor's id to fetch                                                                  |
 
 
 <!-- tabs:start -->
@@ -595,7 +597,7 @@ Get the details of your investors
 
 ``` bash
 curl -X GET https://api.staging.storm.trium.ng/partners/investors/:id
--H "Authorization:Bearer access_token"
+-H "Authorization: Bearer access_token"
 ```
 #### ** Node **
 
@@ -685,15 +687,15 @@ request(options, function (error, response) {
 Get the details of the available balance for an investor to trade
 
 ### Headers
-| Field         	| Data type 	| Description                        	|
-|---------------	|----------	|------------------------------------	|
-| Authorization 	| String   	| Set value to Bearer `access_token` 	|
+| Field           | Data type   | Description                         |
+|---------------  |---------- |------------------------------------ |
+| Authorization   | String    | Set value to Bearer `access_token`  |
 
 ### Query Param
 
-| Field         	| Data type 	| Description                                                                                         	|
-|---------------	|-----------	|-----------------------------------------------------------------------------------------------------	|
-| id       	| String           	| Specify the desired investor's id                                                              	|
+| Field           | Data type   | Description                                                                                           |
+|---------------  |-----------  |-----------------------------------------------------------------------------------------------------  |
+| id        | String            | Specify the desired investor's id                                                               |
 
 
 <!-- tabs:start -->
@@ -702,7 +704,7 @@ Get the details of the available balance for an investor to trade
 
 ``` bash
 curl -X GET https://api.staging.storm.trium.ng/partners/investors/balance?id=investor_id
--H "Authorization:Bearer access_token"
+-H "Authorization: Bearer access_token"
 ```
 #### ** Node **
 
@@ -746,15 +748,15 @@ request(options, function (error, response) {
 Get the details of the current portfolio for an investor
 
 ### Headers
-| Field         	| Data type 	| Description                        	|
-|---------------	|----------	|------------------------------------	|
-| Authorization 	| String   	| Set value to Bearer `access_token` 	|
+| Field           | Data type   | Description                         |
+|---------------  |---------- |------------------------------------ |
+| Authorization   | String    | Set value to Bearer `access_token`  |
 
 ### Query Param
 
-| Field         	| Data type 	| Description                                                                                         	|
-|---------------	|-----------	|-----------------------------------------------------------------------------------------------------	|
-| investorID       	| String           	| Specify the desired investor's id                                                              	|
+| Field           | Data type   | Description                                                                                           |
+|---------------  |-----------  |-----------------------------------------------------------------------------------------------------  |
+| investorID        | String            | Specify the desired investor's id                                                               |
 
 
 <!-- tabs:start -->
@@ -763,7 +765,7 @@ Get the details of the current portfolio for an investor
 
 ``` bash
 curl -X GET https://api.staging.storm.trium.ng/partners/investors/:investorID/portfolio
--H "Authorization:Bearer access_token"
+-H "Authorization: Bearer access_token"
 ```
 #### ** Node **
 
@@ -809,22 +811,22 @@ request(options, function (error, response) {
   <!-- tabs:end -->
 
   # Market Information
-  The market information allows you to get realtime information about the Nigerian Stock Exchange e.g topgainers, toplosers, market news etc.
+  The market information allows you to get real-time information about the Nigerian Stock Exchange e.g top gainers, top losers, market news, etc.
 
   ## Top Gainers information 
   *GET* `/market/news?category=topgainers`
-  Get the stocks with the highest price change for every trading day.
+  Get the stocks that has gained the most value.
 
   ### Headers
-| Field         	| Data type 	| Description                        	|
-|---------------	|----------	|------------------------------------	|
-| Authorization 	| String   	| Set value to Bearer `access_token` 	|
+| Field           | Data type   | Description                         |
+|---------------  |---------- |------------------------------------ |
+| Authorization   | String    | Set value to Bearer `access_token`  |
 
 ### Query Param
 
-| Field         	| Data type 	| Description                                                                                         	|
-|---------------	|-----------	|-----------------------------------------------------------------------------------------------------	|
-| category       	| String           	| Set value to `topgainers`                                                  	|
+| Field           | Data type   | Description                                                                                           |
+|---------------  |-----------  |-----------------------------------------------------------------------------------------------------  |
+| category        | String            | Set value to `topgainers`                                                   |
 
 
 <!-- tabs:start -->
@@ -878,18 +880,19 @@ request(options, function (error, response) {
 
 ## Top Losers Information 
 *GET* `/market/news?category=toplosers`
-Get the stocks with the least price change for every trading day.
+
+Get the stocks that has lost the most value
   
 ### Headers
-| Field         	| Data type 	| Description                        	|
-|---------------	|----------	|------------------------------------	|
-| Authorization 	| String   	| Set value to Bearer `access_token` 	|
+| Field           | Data type   | Description                         |
+|---------------  |---------- |------------------------------------ |
+| Authorization   | String    | Set value to Bearer `access_token`  |
 
 ### Query Param
 
-| Field         	| Data type 	| Description                                                                                         	|
-|---------------	|-----------	|-----------------------------------------------------------------------------------------------------	|
-| category       	| String           	| Set value to `toplosers`                                                  	|
+| Field           | Data type   | Description                                                                                           |
+|---------------  |-----------  |-----------------------------------------------------------------------------------------------------  |
+| category        | String            | Set value to `toplosers`                                                    |
 
 
 <!-- tabs:start -->
@@ -944,17 +947,18 @@ request(options, function (error, response) {
 ## Market News 
 *GET* `/market/news?category=news`
 
-Get market news on the go, to inform your investors' trades 
+Fetch market news,to inform your investors' trades 
+
 ### Headers
-| Field         	| Data type 	| Description                        	|
-|---------------	|----------	|------------------------------------	|
-| Authorization 	| String   	| Set value to Bearer `access_token` 	|
+| Field           | Data type   | Description                         |
+|---------------  |---------- |------------------------------------ |
+| Authorization   | String    | Set value to Bearer `access_token`  |
 
 ### Query Param
 
-| Field         	| Data type 	| Description                                                                                         	|
-|---------------	|-----------	|-----------------------------------------------------------------------------------------------------	|
-| category       	| String           	| Set value to `news`                                                  	|
+| Field           | Data type   | Description                                                                                           |
+|---------------  |-----------  |-----------------------------------------------------------------------------------------------------  |
+| category        | String            | Set value to `news`                                                   |
 
 
 <!-- tabs:start -->
@@ -1008,18 +1012,19 @@ request(options, function (error, response) {
 
 ## Symbols list 
 *GET* `/market/symbols?category=trade`
-Get the list of all symbols avaible to trade
+
+Fetch the list of symbols required to submit a trade request
 
 ### Headers
-| Field         	| Data type 	| Description                        	|
-|---------------	|----------	|------------------------------------	|
-| Authorization 	| String   	| Set value to Bearer `access_token` 	|
+| Field           | Data type   | Description                         |
+|---------------  |---------- |------------------------------------ |
+| Authorization   | String    | Set value to Bearer `access_token`  |
 
 ### Query Param
 
-| Field         	| Data type 	| Description                                                                                         	|
-|---------------	|-----------	|-----------------------------------------------------------------------------------------------------	|
-| category       	| String           	| Set value to `trade`                                                  	|
+| Field           | Data type   | Description                                                                                           |
+|---------------  |-----------  |-----------------------------------------------------------------------------------------------------  |
+| category        | String            | Set value to `trade`                                                    |
 
 
 <!-- tabs:start -->
@@ -1069,18 +1074,18 @@ request(options, function (error, response) {
 
 ## Price List 
 *GET* `/market/symbols?category=price`\
-Get price list of all available securities to inform your investors' decisions
+Get the price list of all available securities to inform your investors' decisions
 
 ### Headers
-| Field         	| Data type 	| Description                        	|
-|---------------	|----------	|------------------------------------	|
-| Authorization 	| String   	| Set value to Bearer `access_token` 	|
+| Field           | Data type   | Description                         |
+|---------------  |---------- |------------------------------------ |
+| Authorization   | String    | Set value to Bearer `access_token`  |
 
 ### Query Params
 
-| Field         	| Data type 	| Description                                                                                         	|
-|---------------	|-----------	|-----------------------------------------------------------------------------------------------------	|
-| category       	| String           	| Set value to `price`                                                  	|
+| Field           | Data type   | Description                                                                                           |
+|---------------  |-----------  |-----------------------------------------------------------------------------------------------------  |
+| category        | String            | Set value to `price`                                                    |
 
 
 <!-- tabs:start -->
@@ -1174,10 +1179,10 @@ This API allows you to initiate BUY and SELL trades for your investors, and mana
 
 
 ### Headers
-| Field         	| Data type 	| Description                        	|
-|---------------	|----------	|------------------------------------	|
-| Authorization 	| String   	| Set value to Bearer `access_token` 	|
-| Content type  	| String   	| Set value to `application/json`    	|
+| Field           | Data type   | Description                         |
+|---------------  |---------- |------------------------------------ |
+| Authorization   | String    | Set value to Bearer `access_token`  |
+| Content type    | String    | Set value to `application/json`     |
 
 ## Body
 ``` json
@@ -1197,19 +1202,19 @@ This API allows you to initiate BUY and SELL trades for your investors, and mana
 ```
 
 ## Body Params
-| Fields               	| Data type 	| Description                                                                                                                                                                                                                                            	|
-|----------------------	|-----------	|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
-| investor_id          	| String    	| Specify the investor id                                                                                                                                                                                                                                	|
-| transaction_ref      	| String    	| Unique string for a transaction request. This will be used to manage the transaction  When on test mode, set as "s-xxxxx" to simulate a successful transaction, "o-xxxxxx" to simulate an open transaction, "p-xxxxx" to simulate a placed transaction 	|
-| cscs_number          	| String    	| Specify the investor's CSCS number                                                                                                                                                                                                                     	|
-| instructions         	| String    	| Specify instructions                                                                                                                                                                                                                                   	|
-| trade_date_limit     	| Datetime  	| Specify date in 'MM-DD-YYYY'                                                                                                                                                                                                                           	|
-| trade_effective_date 	| Datetime  	| Specify date in 'MM-DD-YYYY'                                                                                                                                                                                                                           	|
-| trade_action         	| String    	| Can only be BUY or SELL                                                                                                                                                                                                                                	|
-| trade_price_limit    	| Float     	| Specify price limit in Naira                                                                                                                                                                                                                           	|
-| trade_units          	| Float     	| Specify trade units                                                                                                                                                                                                                                    	|
-| stock_code           	| String    	| Specify the Symbol of the security                                                                                                                                                                                                                     	|
-| trade_account_type   	| String    	| Set as INVESTOR                                                                                                                                                                                                                                        	|
+| Fields                | Data type   | Description                                                                                                                                                                                                                                             |
+|---------------------- |-----------  |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| investor_id           | String      | Specify the investor id                                                                                                                                                                                                                                 |
+| transaction_ref       | String      | Unique string for a transaction request. This will be used to manage the transaction  When on test mode, set as "s-xxxxx" to simulate a successful transaction, "o-xxxxxx" to simulate an open transaction, "p-xxxxx" to simulate a placed transaction  |
+| cscs_number           | String      | Specify the investor's CSCS number                                                                                                                                                                                                                      |
+| instructions          | String      | Specify instructions                                                                                                                                                                                                                                    |
+| trade_date_limit      | Datetime    | Specify date in 'MM-DD-YYYY'                                                                                                                                                                                                                            |
+| trade_effective_date  | Datetime    | Specify date in 'MM-DD-YYYY'                                                                                                                                                                                                                            |
+| trade_action          | String      | Can only be BUY or SELL                                                                                                                                                                                                                                 |
+| trade_price_limit     | Float       | Specify price limit in Naira                                                                                                                                                                                                                            |
+| trade_units           | Float       | Specify trade units                                                                                                                                                                                                                                     |
+| stock_code            | String      | Specify the Symbol of the security                                                                                                                                                                                                                      |
+| trade_account_type    | String      | Set as INVESTOR                                                                                                                                                                                                                                         |
 
 <!-- tabs:start -->
 
@@ -1258,16 +1263,16 @@ request(options, function (error, response) {
 Get the list of transactions initiated within a specified date range
 
 ### Headers
-| Field         	| Data type 	| Description                        	|
-|---------------	|----------	|------------------------------------	|
-| Authorization 	| String   	| Set value to Bearer `access_token` 	|
+| Field           | Data type   | Description                         |
+|---------------  |---------- |------------------------------------ |
+| Authorization   | String    | Set value to Bearer `access_token`  |
 
 ### Query Param
 
-| Field         	| Data type 	| Description                                                                                         	|
-|---------------	|-----------	|-----------------------------------------------------------------------------------------------------	|
-| start_date   	| Datetime          	| Date should be in format **DD-MM-YYY**                                                  	|
-| end_date   	| Datetime          	| Date should be in format **DD-MM-YYY**                                                  	|
+| Field           | Data type   | Description                                                                                           |
+|---------------  |-----------  |-----------------------------------------------------------------------------------------------------  |
+| start_date    | Datetime            | Date should be in format **DD-MM-YYY**                                                    |
+| end_date    | Datetime            | Date should be in format **DD-MM-YYY**                                                    |
 
 
 
@@ -1358,17 +1363,17 @@ request(options, function (error, response) {
 Returns the details of a transaction 
 
 ### Headers
-| Field         	| Data type 	| Description                        	|
-|---------------	|----------	|------------------------------------	|
-| Authorization 	| String   	| Set value to Bearer `access_token` 	|
+| Field           | Data type   | Description                         |
+|---------------  |---------- |------------------------------------ |
+| Authorization   | String    | Set value to Bearer `access_token`  |
 
 ### Query Param
 
-| Field         	| Data type 	| Description                                                                                         	|
-|---------------	|-----------	|-----------------------------------------------------------------------------------------------------	|
-| start_date   	| Datetime          	| Date should be in format **DD-MM-YYY**                                                  	|
-| end_date   	| Datetime          	| Date should be in format **DD-MM-YYY**                                                  	|
-| transaction_ref   	| String          	|Specify the desired transaction reference                                                  	|
+| Field           | Data type   | Description                                                                                           |
+|---------------  |-----------  |-----------------------------------------------------------------------------------------------------  |
+| start_date    | Datetime            | Date should be in format **DD-MM-YYY**                                                    |
+| end_date    | Datetime            | Date should be in format **DD-MM-YYY**                                                    |
+| transaction_ref     | String            |Specify the desired transaction reference                                                    |
 
 
 
@@ -1439,15 +1444,15 @@ request(options, function (error, response) {
 This endpoint allows your investors to cancel an open transaction before it is being executed.
 
 ### Headers
-| Field         	| Data type 	| Description                        	|
-|---------------	|----------	|------------------------------------	|
-| Authorization 	| String   	| Set value to Bearer `access_token` 	|
+| Field           | Data type   | Description                         |
+|---------------  |---------- |------------------------------------ |
+| Authorization   | String    | Set value to Bearer `access_token`  |
 
 ### Path Param
 
-| Field         	| Data type 	| Description                                                                                         	|
-|---------------	|-----------	|-----------------------------------------------------------------------------------------------------	|
-| transactionRef   	| String          	|Specify the desired transaction reference                                                  	|
+| Field           | Data type   | Description                                                                                           |
+|---------------  |-----------  |-----------------------------------------------------------------------------------------------------  |
+| transactionRef    | String            |Specify the desired transaction reference                                                    |
 
 
 

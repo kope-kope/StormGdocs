@@ -1,9 +1,9 @@
 # Introduction
-Figure out how to integrate StormGarden's APIs into your application
+Figure out how to integrate DartInvest's APIs into your application
  
 
 # Basics
-The Stormgarden API allows you (has a Stormgarden partner) to programmatically onboard investors with a top broker enabling them to buy and sell securities listed on the Nigerian Stock Exchange through your application.
+The DartInvest API allows you (has a DartInvest partner) to programmatically onboard investors with a top broker enabling them to buy and sell securities listed on the Nigerian Stock Exchange through your application.
 
 > # Before you Start
 >[Register as a partner](http://console.staging.storm.trium.ng/settings/api). You will be provided with test API and Secret keys, that you can use to test the endpoints. 
@@ -12,7 +12,7 @@ The Stormgarden API allows you (has a Stormgarden partner) to programmatically o
 # Example Requests
 We give sample API calls close to every endpoint using cURL. You simply have to insert  your specific values, and you can test the calls from the command line. You can [read this article](https://www.baeldung.com/curl-rest) to learn how to use cURL with APIs.
 
-Not familiar with cURL? You can use [Postman](https://www.postman.com/downloads/). Postman is a collaboration environment for API development including making HTTP requests. Run the [Stormgarden APIs Collection](https://documenter.getpostman.com/view/11930516/TVYF6xeD) in Postman to make testing quicker and easier.
+Not familiar with cURL? You can use [Postman](https://www.postman.com/downloads/). Postman is a collaboration environment for API development including making HTTP requests. Run the [DartInvest APIs Collection](https://documenter.getpostman.com/view/11930516/TVYF6xeD) in Postman to make testing quicker and easier.
 
 # Requests and Responses
 The request and response bodies are formatted in JSON. The Content-type for all responses is set to `application/json`. 
@@ -32,7 +32,10 @@ Successful and Error responses are in the following formats:
 ```JSON
 {
     "status": [integer],
-    "errors": [array]
+    "errors": [
+      "code" : 200x
+      "message" : [string]
+    ]
 }
 ```
 <!-- tabs:end -->
@@ -41,7 +44,7 @@ The status key contains the HTTP status code in order to determine the result of
 
 The data key has the result of a request. Its data type is an object (or an array) depending on the request made. A request to GET an investor's details returns an object in the data key, while a request to GET an investor's portfolio returns an array in the data key.
 
-The error key contains the description of the error(s) with the request made.
+The error key contains the custom error code defined and the description of the error. Learn more about [Errors](#Errors)
 
 # Authentication
 
@@ -60,17 +63,14 @@ Authorization headers should be set in this format : `Authorization: Bearer acce
 > Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXJ0bmVySWQiOiJkZDE3MmE3Zi0zM2I4LTQwZjQtODE5ZS0zMDg3M2EyZWE0NjIiLCJpZCI6Ijk5NzFhZjdjLTc0NjEtNDI3ZS05OWUwLWM5ZDRjM2M2NzMzYiIsIm1vZGUiOiJsaXZlIiwiaWF0IjoxNjA0NDE0NzI1LCJleHAiOjE2MDk1OTg3MjV9.FoHqZEfrTegIF8w72BZDrmhtb_Wt7rDsAvYxLD1ey2A 
 
 # Errors
-Some common errors that you might encounter during integration are discussed with their causes below
+To aid integration, we set up custom error codes for error scenarios that you might encounter while integrating to our APIs. See the list here:
 
-**You cannot access this resource**
-1. You will get the error message when you don't authenticate your API calls with a valid access token. 
-2. You may also get the error message when access token generated from test keys are used to authenticate API calls to a live endpoint.
-
+# Custom Error Codes
 
 | **Error Codes** | **Description** |
 |-------------|-------------|
-| 400         |  Th           |
-| 422           |             |
+| 2001        |        |
+| 2002          |             |
 |             |             |
 
 # Access Token

@@ -1,5 +1,5 @@
 
-# StormGarden APIs
+# DartInvest APIs
 
 ## Integrate easily to your application to:
 - Onboard Investors

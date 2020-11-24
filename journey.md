@@ -25,7 +25,7 @@ Before your Investor can be `active`, you need to send in some KYC documents by 
 
 4. A scanned copy of the investor's signature
 
-You can either send the four documents in a single .pdf file or upload the four documents at the same time in .png, .jpg and .pdf. Within, 72 hours of sending the documents, your investor's status should be active.
+You should send the four documents in a single .pdf file
 
 ### Step Three - Fetch Investor's Details
 

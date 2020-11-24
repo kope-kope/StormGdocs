@@ -4,20 +4,23 @@
 
 </div>
 
-* Getting started
+ 
+  * [**Getting started**](journey.md)
+  * [**Introduction**](README.md#Introduction)
+  * [**Authentication**](README.md#Authentication)
+  * [**Errors**](README.md#Errors)
 
-  * [Introduction](README.md#Introduction)
-  * [Authentication](README.md#Authentication)
-  * [Errors](README.md#Errors)
+
+  * **Endpoints**
+  <br/>
 
 
-  * Endpoints
   
   * [Access Token](README.md#access-token)
   * [Investors](README.md#Investors)  
     * [Create Investor](README.md#create-investor)
+    * [Upload KYC](README.md#upload-kyc)
     * [Update Investor](README.md#update-investor)
-    * [Upload KYC](upload_kyc)
     * [Change Investor Status](README.md#change-investor-status)
     * [List Investors](README.md#list-investors)
     * [Fetch Investor](README.md#fetch-investor)

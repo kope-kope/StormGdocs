@@ -21,7 +21,7 @@ Successful and Error responses are in the following formats:
 <!-- tabs:start -->
 #### ** Successful **
 
-```json
+``` json
 {
     "status": [integer],
     "data": [object]
@@ -29,7 +29,7 @@ Successful and Error responses are in the following formats:
 ```
 #### ** Error **
 
-```json
+``` json
 {
     "status": [integer],
     "errors": [
@@ -66,7 +66,7 @@ Authorization headers should be set in this format: `Authorization: Bearer acces
 We use standard HTTP response codes for success and failure notifications. In general, 200 HTTP codes correspond to success, 40X codes are for developer- or user-related failures which are further classified with custom error codes, and 50X codes are for Dart Invest-related issues.
 
 ## Sample Error Schema
-```json
+``` json
 {
     "status": [integer],
     "errors": [
@@ -82,7 +82,7 @@ We use standard HTTP response codes for success and failure notifications. In ge
 |-------------|-------------|
 | 2001        |             |
 | 2002        |             |
-|          |             |
+|      |             |
 
 # Access Token
 *POST* `/token`
@@ -137,7 +137,7 @@ request(options, function (error, response) {
 ```
 #### ** Response **
 
-```json
+``` json
 {
     "status": 201,
     "data": {
@@ -243,7 +243,7 @@ request(options, function (error, response) {
 ```
 #### ** Response **
 
-```JSON
+``` json
 {
   "status": 201,
   "data": {
@@ -255,6 +255,71 @@ request(options, function (error, response) {
 
 ```
 <!-- tabs:end -->
+
+## Upload KYC
+*PUT* `/partners/investors/:investorId/kyc`
+Upload investor's KYC documents
+
+### Headers
+| Field           | Data type | Description                         |
+|---------------  |---------- |------------------------------------ |
+| Authorization   | String    | Set value to Bearer `access_token`  |
+### Body Params
+
+| Field 	| File       	| Description                           	|
+|-------	|------------	|---------------------------------------	|
+| files 	| utiliy.pdf 	| File(s) must be in .pdf, .jpg or .png 	|
+
+<!-- tabs:start -->
+
+#### ** cURL **
+
+``` bash
+curl -X PUT https://api.staging.storm.trium.ng/partners/investorId/kyc
+-F "files=@utility.pdf" 
+-H "Authorization:Bearer access_token"
+```
+#### ** Node **
+
+``` javascript
+var request = require('request');
+var fs = require('fs');
+var options = {
+  'method': 'PUT',
+  'url': 'https://api.staging.storm.trium.ng/partners/investorId/kyc',
+  'headers': {
+    'Authorization': 'Bearer {{token}}'
+  },
+  formData: {
+    'files': {
+      'value': fs.createReadStream('utility.pdf'),
+      'options': {
+        'filename': 'utility.pdf',
+        'contentType': null
+      }
+    }
+  }
+};
+request(options, function (error, response) {
+  if (error) throw new Error(error);
+  console.log(response.body);
+});
+
+```
+#### ** Response **
+
+``` json
+{
+    "status": 200,
+    "message": "Uploaded Successfully"
+}
+
+```
+<!-- tabs:end -->
+
+
+
+
 
 ## Update Investor
 *PUT* `/partners/investor/:id`
@@ -330,7 +395,7 @@ request(options, function (error, response) {
 ```
 #### ** Response **
 
-```JSON
+``` json
 {
   "status": 200,
   "data": {
@@ -391,7 +456,7 @@ request(options, function (error, response) {
 ```
 #### ** Response **
 
-```JSON
+``` json
 {
     "status": 200,
     "data": {
@@ -450,7 +515,7 @@ request(options, function (error, response) {
 ```
 #### ** Response **
 
-```JSON
+``` json
 {
     "status": 200,
     "data": {
@@ -619,7 +684,7 @@ request(options, function (error, response) {
 ```
 #### ** Response **
 
-```json
+``` json
 {
   "status": 200,
   "data": {
@@ -728,7 +793,7 @@ request(options, function (error, response) {
 ```
 #### ** Response **
 
-```json
+``` json
 {
     "status": 200,
     "data": {
@@ -789,7 +854,7 @@ request(options, function (error, response) {
 ```
 #### ** Response **
 
-```json
+``` json
 {
     "status": 200,
     "data": [
@@ -815,6 +880,7 @@ request(options, function (error, response) {
 
   ## Top Gainers information 
   *GET* `/market/news?category=topgainers`
+
   Get the stocks that has gained the most value.
 
   ### Headers
@@ -857,7 +923,7 @@ request(options, function (error, response) {
 ```
 #### ** Response **
 
-```json
+``` json
 {
     "status": 200,
     "data": [
@@ -923,7 +989,7 @@ request(options, function (error, response) {
 ```
 #### ** Response **
 
-```json
+``` json
 {
     "status": 200,
     "data": [
@@ -989,7 +1055,7 @@ request(options, function (error, response) {
 ```
 #### ** Response **
 
-```json
+``` json
 {
     "status": 200,
     "data": [
@@ -1055,7 +1121,7 @@ request(options, function (error, response) {
 ```
 #### ** Response **
 
-```json
+``` json
 {
     "status": 200,
     "data": {
@@ -1116,7 +1182,7 @@ request(options, function (error, response) {
 ```
 #### ** Response **
 
-```json
+``` json
 {
     "status": 200,
     "data": [
@@ -1247,7 +1313,7 @@ request(options, function (error, response) {
 ```
 #### ** Response **
 
-```json
+``` json
 {
     "status": 200,
     "message": "success",
@@ -1260,6 +1326,7 @@ request(options, function (error, response) {
 
 ## List Transactions by Date
 *GET* `/transactions?start_date=01-01-2020&end_date=12-12-2020`
+
 Get the list of transactions initiated within a specified date range
 
 ### Headers
@@ -1304,7 +1371,7 @@ request(options, function (error, response) {
 ```
 #### ** Response **
 
-```json
+``` json
 {
     "status": 200,
     "data": {
@@ -1360,6 +1427,7 @@ request(options, function (error, response) {
 
 ## Fetch Transactions by Transaction Reference
 *GET* `/transactions?start_date=01-01-2020&end_date=12-12-2020&transaction_ref=s-xZ1wp0KGi0w3XVN8FwNq`
+
 Returns the details of a transaction 
 
 ### Headers
@@ -1404,7 +1472,7 @@ request(options, function (error, response) {
 ```
 #### ** Response **
 
-```json
+``` json
 {
     "status": 200,
     "data": {
@@ -1441,6 +1509,7 @@ request(options, function (error, response) {
 
 ## Cancel Transactions 
 *GET* `/transactions/:transactionRef`
+
 This endpoint allows your investors to cancel an open transaction before it is being executed.
 
 ### Headers
@@ -1483,7 +1552,7 @@ request(options, function (error, response) {
 ```
 #### ** Response **
 
-```json
+``` json
 {
     "status": 200
 }

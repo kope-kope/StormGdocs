@@ -25,7 +25,7 @@ Before your Investor can be `active`, you need to send in some KYC documents by 
 
 4. A scanned copy of the investor's signature
 
-You should send the four documents in a single .pdf file
+These four documents should be sent in a single .pdf file
 
 ### Step Three - Fetch Investor's Details
 

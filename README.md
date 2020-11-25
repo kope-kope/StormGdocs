@@ -61,7 +61,7 @@ Just before you initiate a BUY trade, you have to make secure calls to the [Mark
 
 After a BUY trade is successfully executed, the [investor's portfolio](README.md#fetch-investor39s-portfolio) increases with the stocks bought. To sell this, make a secure call to the [Create Transaction](README.md#create-transaction),  set the trade_action = `SELL` and  specified transaction reference, This transaction reference will be used to manage the transaction i.e [fetch](README.md#list-transactions-by-date) and [cancel](#README.md#cancel-transactions) transaction. On completion of your trade, you can view the transactions list to know the status.
 
-> The stock market opens between 10AM and 2:20PM (WAT) on workdays, Monday though Friday, except public holidays. Trades placed outside the > trade window would be queued for exectution in the next trade window
+> The stock market opens between 10AM and 2:20PM (WAT) on workdays, Monday though Friday, except public holidays. Trades placed outside the trade window would be queued for exectution in the next trade window
 
 # Example Requests
 We give sample API calls close to every endpoint using cURL. You simply have to insert your specific values, and you can test the calls from the command line. You can [read this article](https://www.baeldung.com/curl-rest) to learn how to use cURL with APIs.

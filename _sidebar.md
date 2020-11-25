@@ -4,9 +4,8 @@
 
 </div>
 
- 
-  * [**Getting started**](journey.md)
   * [**Introduction**](README.md#Introduction)
+  * [**Getting started**](README.md#Getting-Started)
   * [**Authentication**](README.md#Authentication)
   * [**Errors**](README.md#Errors)
 

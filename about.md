@@ -5,7 +5,6 @@ Dart Invest provides brokerage and trading services via APIs enabling businesses
 
 
 ## Who Is Dart Invest For?
-Dart Invest is for 
 
 ## How does it work
 

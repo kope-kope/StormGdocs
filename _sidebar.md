@@ -36,7 +36,6 @@
   * [**Market Information**](market.md)
   * [**Trade Orders**](orders.md)
 
-  * **Endpoints**
   <br/>
 <!-- 
      About Dart Invest

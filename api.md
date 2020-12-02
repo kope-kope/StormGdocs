@@ -7,6 +7,8 @@ We give sample API calls close to every endpoint using cURL. You simply have to 
 
 Not familiar with cURL? You can use [Postman](https://www.postman.com/downloads/). Postman is a collaboration environment for API development including making HTTP requests. Run the [Dart Invest APIs Collection](https://documenter.getpostman.com/view/11930516/TVYF6xeD) in Postman to make testing quicker and easier.
 
+***
+
 # Requests and Responses
 The request and response bodies are formatted in JSON. The Content-type for all responses is set to `application/JSON`. 
 Successful and Error responses are in the following formats:
@@ -38,6 +40,7 @@ The status key contains the HTTP status code to determine the result of an API c
 The data key has the result of a request. Its data type is an object (or an array) depending on the request made. A request to GET an investor's details returns an object in the data key, while a request to GET an investor's portfolio returns an array in the data key.
 
 The error key contains the custom error code defined and the description of the error. Learn more about [Errors](#Errors)
+****
 
 # Authentication
 
@@ -48,12 +51,10 @@ To generate your access token, call the [Access Token](#Access-Token) endpoint w
 
 Authorization headers should be set in this format: `Authorization: Bearer access_token`
 
-
-
-
 > **Sample Authorization Header**
 >
 > Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXJ0bmVySWQiOiJkZDE3MmE3Zi0zM2I4LTQwZjQtODE5ZS0zMDg3M2EyZW
+****
 
 # Errors
 We use standard HTTP response codes for success and failure notifications. In general, 200 HTTP codes correspond to success, 40X codes are for developer- or user-related failures which are further classified with custom error codes, and 50X codes are for Dart Invest-related issues.
@@ -71,8 +72,10 @@ We use standard HTTP response codes for success and failure notifications. In ge
 
 #### Custom Error Codes
 
+***
 
 # Access Token
+
 *POST* `/token`
 
 This API allows you to generate an access token, for authorizing other API calls.
@@ -139,11 +142,17 @@ request(options, function (error, response) {
 ```
 <!-- tabs:end -->
 
+****
+
 # Investors
-The investors API enables you to create and manage investors
+***
+The investors API alllows you to create investors, upload the relevant KYC documents and manage investors. The API also serves important information about the investor including its cash balance and portfolio.
 
 ### Create Investor
+***
 *POST* `/partners/investors`
+
+Create a new investor with a HTTP POST request. After successful creation, the status of the investor is set to `pending` and a UUID = `investorID` is assigned to this investor which will be used for subsequent management.
 
 ### Headers
 | Field           | Data type   | Description                         |
@@ -160,7 +169,7 @@ The investors API enables you to create and manage investors
         "first_name": "Denji",
         "other_names": "Baton",
         "gender": "M",
-        "phone": 1,
+        "phone": "08146349233",
         "date_of_birth": "05-21-1978",
         "email_address": "abc@testmenow.com",
         "home_phone": "080334588888"
@@ -245,18 +254,20 @@ request(options, function (error, response) {
 <!-- tabs:end -->
 
 ## Upload KYC
+***
 *PUT* `/partners/investors/:investorId/kyc`
-Upload investor's KYC documents
+
+Upload investors' KYC documents with this API. The file size limit per upload is set to 10MB. If successful, the status of the investor is updated to `pending_kyc_approval`. 
 
 ### Headers
 | Field           | Data type | Description                         |
 |---------------  |---------- |------------------------------------ |
 | Authorization   | String    | Set value to Bearer `access_token`  |
-### Body Params
 
+### Body Params
 | Field 	| File       	| Description                           	|
 |-------	|------------	|---------------------------------------	|
-| files 	| utiliy.pdf 	| File(s) must be in .pdf, .jpg or .png 	|
+| files 	| utility.pdf 	| File(s) must be in .pdf, .jpg or .png 	|
 
 <!-- tabs:start -->
 
@@ -307,11 +318,11 @@ request(options, function (error, response) {
 
 
 
-
-
 ## Update Investor
+***
 *PUT* `/partners/investor/:id`
-Update investor's details, you can only update the details of `active` investors
+
+A simple HTTP PUT request to the investors API and you can update the details for an investor within few seconds. However, this will be successful for an `Active` investor
 
 ### Headers
 | Field           | Data type | Description                         |
@@ -394,10 +405,11 @@ request(options, function (error, response) {
 ```
 <!-- tabs:end -->
 
-## Change Investor Status 
+## Change Status 
+***
 *PUT* `/partners/investor/status/:id`
 
-Activate or Deactivate an investor, set the status to `true` to activate an investor, `false` to deactivate an investor
+As a partner, the investor API allows you to activate or deactivate an investor, set the status to `true` to activate an investor, `false` to deactivate an investor. 
 
 ## Headers
 | Field           | Data type   | Description                         |
@@ -454,10 +466,11 @@ request(options, function (error, response) {
 ```
 <!-- tabs:end -->
 
-## List Investors
+## Get all details
+***
 *GET* `/partners/investors`
 
-Returns a list of investors created
+Return information about all your investors
 
 ### Headers
 | Field           | Data type   | Description                         |
@@ -465,6 +478,8 @@ Returns a list of investors created
 | Authorization   | String    | Set value to Bearer `access_token`  |
 
 ### Query Params
+
+You can filter the list by the following fields:
 
 | Field           | Data type   | Description                                                                                           |
 |---------------  |-----------  |-----------------------------------------------------------------------------------------------------  |
@@ -627,10 +642,11 @@ request(options, function (error, response) {
 ```
 <!-- tabs:end -->
 
-## Fetch Investor
+## Get details by ID
+***
 *GET* `/partners/investors/:id`
 
-Fetch the details of a specific investor using the Investor ID
+Return the details of a specific investor using the Investor ID.
 
 ### Headers
 | Field           | Data type   | Description                         |
@@ -641,7 +657,7 @@ Fetch the details of a specific investor using the Investor ID
 
 | Field           | Data type   | Description                                                                                           |
 |---------------  |-----------  |-----------------------------------------------------------------------------------------------------  |
-| id        | String            | Specify the desired investor's id to fetch                                                                  |
+| id        | String            | Specify the desired investor's id                                                              |
 
 
 <!-- tabs:start -->
@@ -737,21 +753,22 @@ request(options, function (error, response) {
   ```
   <!-- tabs:end -->
 
-## Fetch Investor's Balance 
-*GET* `/partners/investors/balances?id=investor_id`
+## Get Balance
+***
+*GET* `/partners/investors/:investorID/balances`
 
-Get the details of the available balance for an investor to trade
+Get the cash balance for a specific investor
 
 ### Headers
 | Field           | Data type   | Description                         |
 |---------------  |---------- |------------------------------------ |
 | Authorization   | String    | Set value to Bearer `access_token`  |
 
-### Query Param
+### Path Param
 
 | Field           | Data type   | Description                                                                                           |
 |---------------  |-----------  |-----------------------------------------------------------------------------------------------------  |
-| id        | String            | Specify the desired investor's id                                                               |
+| investorID        | String            | Specify the desired investor's id                                                               |
 
 
 <!-- tabs:start -->
@@ -759,7 +776,7 @@ Get the details of the available balance for an investor to trade
 #### ** cURL **
 
 ``` bash
-curl -X GET https://api.staging.storm.trium.ng/partners/investors/balance?id=investor_id
+curl -X GET https://api.staging.storm.trium.ng/partners/investors/:investorID/balances
 -H "Authorization: Bearer access_token"
 ```
 #### ** Node **
@@ -768,7 +785,7 @@ curl -X GET https://api.staging.storm.trium.ng/partners/investors/balance?id=inv
 var request = require('request');
 var options = {
   'method': 'GET',
-  'url': 'https://api.staging.storm.trium.ng/partners/investors/balances?id=investor_id',
+  'url': 'https://api.staging.storm.trium.ng/partners/investors/:investorID/balances',
   'headers': {
     'authorization': 'Bearer access_token'
   }
@@ -798,17 +815,19 @@ request(options, function (error, response) {
   ```
   <!-- tabs:end -->
 
- ## Fetch Investor's Portfolio
+ ## Get Portfolio
+ ***
+
  *GET* `/partners/investors/:investorID/portfolio`
 
-Get the details of the current portfolio for an investor
+Get the details of the portfolio for an investor
 
 ### Headers
 | Field           | Data type   | Description                         |
 |---------------  |---------- |------------------------------------ |
 | Authorization   | String    | Set value to Bearer `access_token`  |
 
-### Query Param
+### Field Param
 
 | Field           | Data type   | Description                                                                                           |
 |---------------  |-----------  |-----------------------------------------------------------------------------------------------------  |
@@ -865,14 +884,18 @@ request(options, function (error, response) {
 }
 ```
   <!-- tabs:end -->
+  ***
 
   # Market Information
-  The market information allows you to get real-time information about the Nigerian Stock Exchange e.g top gainers, top losers, market news, etc.
+  ***
 
-  ## Top Gainers information 
+  Dart Invest's market information API provides market data from the Nigerian Stock Exchange to your investors get e.g top gainers, top losers, market news, list of all symbols and their prices.
+
+  ## Top Gainers
+  ***
   *GET* `/market/news?category=topgainers`
 
-  Get the stocks that has gained the most value.
+  Get details of the stocks that has gained the most value.
 
   ### Headers
 | Field           | Data type   | Description                         |
@@ -935,10 +958,12 @@ request(options, function (error, response) {
 ```
   <!-- tabs:end -->
 
-## Top Losers Information 
+## Top Losers 
+***
+
 *GET* `/market/news?category=toplosers`
 
-Get the stocks that has lost the most value
+Get details of the stocks that has lost the most value
   
 ### Headers
 | Field           | Data type   | Description                         |
@@ -1002,9 +1027,8 @@ request(options, function (error, response) {
   <!-- tabs:end -->
 
 ## Market News 
+***
 *GET* `/market/news?category=news`
-
-Fetch market news,to inform your investors' trades 
 
 ### Headers
 | Field           | Data type   | Description                         |
@@ -1067,10 +1091,12 @@ request(options, function (error, response) {
 ```
   <!-- tabs:end -->
 
-## Symbols list 
+## Symbols
+
+***
 *GET* `/market/symbols?category=trade`
 
-Fetch the list of symbols required to submit a trade request
+Returns a full list of symbols available to trade via Dart Invest's APIs
 
 ### Headers
 | Field           | Data type   | Description                         |
@@ -1129,9 +1155,12 @@ request(options, function (error, response) {
 ```
   <!-- tabs:end -->
 
-## Price List 
-*GET* `/market/symbols?category=price`\
-Get the price list of all available securities to inform your investors' decisions
+## Price List
+
+***
+*GET* `/market/symbols?category=price`
+
+Get the price and other important metrics for all available securities available to trade.
 
 ### Headers
 | Field           | Data type   | Description                         |
@@ -1228,12 +1257,17 @@ request(options, function (error, response) {
 ```
   <!-- tabs:end -->
 
+***
+
 # Transactions
-This API allows you to initiate BUY and SELL trades for your investors, and manage their transactions
+***
+The transactions API allows you to submit BUY and SELL trade requests at any time, monitor these requests and cancel at will. Once an order is placed, it stays open till it is executed as instructed, these requests can be further queried by the specified transaction reference.
 
 ## Create Transaction
+***
 *POST* `/transactions`
 
+Submit a trade request and specify its properties.
 
 ### Headers
 | Field           | Data type   | Description                         |
@@ -1315,7 +1349,9 @@ request(options, function (error, response) {
 ```
 <!-- tabs:end -->
 
-## List Transactions by Date
+## Get Transactions by Date
+***
+
 *GET* `/transactions?start_date=01-01-2020&end_date=12-12-2020`
 
 Get the list of transactions initiated within a specified date range
@@ -1416,10 +1452,12 @@ request(options, function (error, response) {
 ```
   <!-- tabs:end -->
 
-## Fetch Transactions by Transaction Reference
+## Get Transaction details
+***
+
 *GET* `/transactions?start_date=01-01-2020&end_date=12-12-2020&transaction_ref=s-xZ1wp0KGi0w3XVN8FwNq`
 
-Returns the details of a transaction 
+Returns the details of a transaction
 
 ### Headers
 | Field           | Data type   | Description                         |
@@ -1498,10 +1536,12 @@ request(options, function (error, response) {
 ```
 <!-- tabs:end -->
 
-## Cancel Transactions 
+## Cancel Transactions
+***
+
 *GET* `/transactions/:transactionRef`
 
-This endpoint allows your investors to cancel an open transaction before it is being executed.
+The transactions API gives you the capability to cancel a trade before it is executed as instructed. 
 
 ### Headers
 | Field           | Data type   | Description                         |
@@ -1512,7 +1552,7 @@ This endpoint allows your investors to cancel an open transaction before it is b
 
 | Field           | Data type   | Description                                                                                           |
 |---------------  |-----------  |-----------------------------------------------------------------------------------------------------  |
-| transactionRef    | String            |Specify the desired transaction reference                                                    |
+| transactionRef    | String            |Specify the transaction reference to cancel                                                   |
 
 
 

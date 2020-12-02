@@ -11,7 +11,7 @@ Dart Invest achieves this by leveraging a partnership with stock brokerage firms
 
 # Getting started
 
-To get started as a trade partner on Dart Invest, Sign up on [www.dart.invest](https://console.staging.storm.trium.ng/register) and provide all the valid KYC documentation. While you wait for the approval of your partnership sign-up, you can commence integration with the [test keys]. Upon approval, you would be able to fetch live keys.
+To get started as a trade partner on Dart Invest, Sign up on [www.dart.invest](https://console.staging.storm.trium.ng/register) and provide all the valid KYC documentation. While you wait for the approval of your partnership sign-up, you can commence integration with the [test keys](api.md#before-you-start). Upon approval, you would be able to fetch live keys.
 
 Dart Invest console also allows you to access your transaction metrics and performance via the dashboard, manage investors' back-office support requests, and much more.
 

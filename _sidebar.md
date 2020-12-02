@@ -12,8 +12,6 @@
   * [**Market Information**](home.md#market-information-amp-symbols)
   * [**Trade Orders**](home.md#trade-orders)
 
-  <br>
-
   * [**API Documentation**](api.md#before-you-start)
     * [Investors](api.md#Investors)  
       * [Create Investor](api.md#create-investor)

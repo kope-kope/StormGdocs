@@ -22,9 +22,7 @@ With Dart Invest, you can create investor accounts. Investors created on dart in
 
 2. [Uploading the KYC](api.md#upload-kyc) (Valid means of ID)
 
-The investor details are validated at the back-office and upon approval, the investor status becomes active and the investor is notified of the account creation with the broker and CSCS. This also means that the investor is ready to trade.
-
-In addition to the this, you can: 
+The investor details are validated at the back-office and upon approval, the investor status becomes active and the investor is notified of the account creation with the broker and CSCS. This also means that the investor is ready to trade. In addition to this, you can: 
 
 1. [Update investor details](api.md#update-investor)
 
@@ -51,25 +49,25 @@ Data and insights gotten from the Market information is used as direct and indir
 
 # Trade Orders
 
-As a Partner, you can place BUY or SELL Trades for investors. Trades are typically executed with the trade-window of the NSE which is between 10 AM and 2:20 PM GMT+01:00 on workdays (Monday to Friday) except on public holidays. Trade requests made outside this window are queued for the next available trade-window.  For example, trades placed on a Saturday are automatically queued for the next workday Monday.
+As a Partner, you can place BUY or SELL Trades for investors. Trades are typically executed within the trade-window of the NSE which is between 10 AM and 2:20 PM GMT+01:00 on workdays (Monday to Friday) except on public holidays. Trade requests made outside this window are queued for the next available trade-window.  For example, trades placed on a Saturday are automatically queued for the next workday Monday.
 
 ### BUY Trade
 
-Partners can place a trade on behalf of investors. However, for an investor to place a trade, its virtual cash account has to be funded. The virtual cash account can be funded by making a funds transfer to the Virtual NUBAN of the investor.  To confirm the receipt of payment into the virtual cash account, you can [GET the balance](api.md#fetch-investor39s-balance) of the investor.
+Partners can place a trade on behalf of investors. However, for an investor to place a trade, the investor's virtual cash account has to be funded. The virtual cash account can be funded by making a funds transfer to the Virtual NUBAN of the investor.  To confirm the receipt of payment into the virtual cash account, you can [get the balance](api.md#fetch-investor39s-balance) of the investor.
 
 Once the account is confirmed funded, the [BUY trade](api.md#create-transaction)  request can be placed. Partners can check the status of the trade by fetching the [list of  trades](api.md#list-transactions-by-date)  and the [trade details](api.md#fetch-transactions-by-transaction-reference) 
 
 Upon a successful trade request, the investor gets an email notification of the trade request and upon execution, the investor also gets an email notification.
 
-The investor [cash balance](api.md#fetch-investor39s-balance) is  depleted and its [portfolio size](api.md#fetch-investor39s-portfolio) increased.
+The investor [cash balance](api.md#fetch-investor39s-balance) is  depleted while the [portfolio size](api.md#fetch-investor39s-portfolio) is increased.
 
 ### SELL Trade
 
-In a similar order an investor can place [SELL trades](api.md#create-transaction) . This depletes the [investor portfolio](api.md#fetch-investor39s-portfolio)) and increases its [cash balance](api.md#fetch-investor39s-balance) 
+In a similar order an investor can place [SELL trades](api.md#create-transaction) . This depletes the [investor portfolio](api.md#fetch-investor39s-portfolio) while the [cash balance](api.md#fetch-investor39s-balance) is increased.
 
 ### Transactions
 
-The investor's transaction history can be fetched via the APIs and are also available on the back office console.
+The investor's transaction history can be fetched via [APIs](api.md#Fetch-Transactions-by-Transaction-Reference) with the transaction reference or by [date](api.md#list-transactions-by-date) and are also available on the back office console.
 
 
 

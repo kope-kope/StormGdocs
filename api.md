@@ -44,7 +44,7 @@ The error key contains the custom error code defined and the description of the 
 API requests must be made over HTTPS.
 API calls are further authenticated by including your access token in the authorization header of every request.
 
-To generate your access token, call the [Access Token](#Access_Token) endpoint with your API and Secret keys. Generally, access token generated from test keys authenticates the test endpoints, while live endpoints are authenticated with access token generated from live keys.
+To generate your access token, call the [Access Token](#Access-Token) endpoint with your API and Secret keys. Generally, access token generated from test keys authenticates the test endpoints, while live endpoints are authenticated with access token generated from live keys.
 
 Authorization headers should be set in this format: `Authorization: Bearer access_token`
 

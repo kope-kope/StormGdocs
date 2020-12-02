@@ -4,8 +4,18 @@
 
 </div>
 
+
+  
+  * [**Introduction**](home.md#Introduction)
+  * [**Getting Started**](home.md#getting-started)
+  * [**Investor Accounts**](home.md#investors39-account)
+  * [**Market Information**](home.md#market-information-amp-symbols)
+  * [**Trade Orders**](home.md#trade-orders)
+
+  <br>
+
   * [**API Documentation**](api.md)
-    * [Accounts](api.md#Investors)  
+    * [Investors](api.md#Investors)  
       * [Create Investor](api.md#create-investor)
       * [Upload KYC](api.md#upload-kyc)
       * [Update Investor](api.md#update-investor)
@@ -20,23 +30,12 @@
       * [Market News](api.md#market-news)
       * [Symbols List](api.md#symbols-list)
       * [Price List](api.md#price-list)
-    * [Orders](api.md#Transactions)
+    * [Transactions](api.md#Transactions)
       * [Create Transaction](api.md#create-transaction)
       * [List Transactions by Date](api.md#list-transactions-by-date)
       * [Fetch Transactions by Transaction Reference](api.md#fetch-transactions-by-transaction-reference)
       * [Cancel Transactions](api.md#cancel-transactions)
-   
 
-<br />
-
-  * [**Home**](home.md)
-  * [**About Dart Invest**](about.md)
-  * [**Getting Started**](getstarted.md)
-  * [**Investor Accounts**](investors.md)
-  * [**Market Information**](market.md)
-  * [**Trade Orders**](orders.md)
-
-  <br/>
 <!-- 
      About Dart Invest
 

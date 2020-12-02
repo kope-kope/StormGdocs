@@ -1,5 +1,5 @@
 # Introduction
-**Welcome to Dart Invest!** Learn all about Dart Invest APIs and how to integrate them with your application. Dart Invest provides securities and brokerage services using a technology-driven approach. Dart Invest allows Trade Partners access to brokerage services in the African market starting with the Nigerian Stock Exchange. With Dart Invest, Trade Partners such as Banks, Fintechs and othe App Owners who integrate easily to the APIs which enables them to: 
+**Welcome to Dart Invest!** Learn all about Dart Invest APIs and how to integrate them with your application. Dart Invest provides securities and brokerage services using a technology-driven approach. Dart Invest allows Trade Partners access to brokerage services in the African market starting with the Nigerian Stock Exchange. With Dart Invest, Trade Partners such as Banks, Fintechs and other App Owners who integrate easily to the APIs which enables them to: 
 
 1. Create and Manage Investor Accounts
 
@@ -11,18 +11,18 @@ Dart Invest achieves this by leveraging a partnership with stock brokerage firms
 
 # Getting started
 
-To get started as a trade partner on Dart Invest, Sign up on www.dart.invest and provide all the valid KYC documentation. While you wait for the approval of your partnership sign-up, you can can commence integration with the test keys. Upon approval, you would be able to fetch live keys.
+To get started as a trade partner on Dart Invest, Sign up on [www.dart.invest](https://console.staging.storm.trium.ng/register) and provide all the valid KYC documentation. While you waitor the approval of your partnership sign-up, you can commence integration with the test keys. Upon approval, you would be able to fetch live keys.
 
-Dart Invest console also allows to access you transaction metrics and performance via the dashboard, manage investor’s back-office support requests.
+Dart Invest console also allows to access your transaction metrics and performance via the dashboard, manage investor’s back-office support requests.
 
 # Investors' Account
-With Dart Invest, you can create investor accounts. Investors created on dart invest are registered with the Nigerian CSCS, a registered brokerage firm and have a virtual cash account created. During investor account creation, the partner is required to provide a valid means of ID, which can be fetched from the investor directly or provided on behalf the investor by partner. The sequence of investor creation is involves a two step process of 
+With Dart Invest, you can create investor accounts. Investors created on dart invest are registered with the Nigerian CSCS, a registered brokerage firm and have a virtual cash account created. During investor account creation, the partner is required to provide a valid means of ID, which can be fetched from the investor directly or provided on behalf of the investor by the partner. The sequence of investor  creation involves a two step process of 
 
 1. Calling the [Create Investor](api.md#create-investor) API  
 
 2. [Uploading the KYC](api.md#upload-kyc) (Valid means of ID)
 
-The investor details are validated at the back-office and upon approval, the investor status becomes active and investor is notified of the account creation with broker and the CSCS. The also means that the investor is ready to trade :)
+The investor details are validated at the back-office and upon approval, the investor status becomes active and investor is notified of the account creation with broker and CSCS. This also means that the investor is ready to trade
 
 In addition to the this, you can 
 
@@ -47,7 +47,7 @@ Just before your investors start trading, they would require market information 
 
 5. [Price List](api.md#price-list)
 
-Information gotten from the Market information  are used as direct and indirect inputs or factors use in placing trade requests.
+Information gotten from the Market information  are used as direct and indirect inputs or factors used in placing trade requests.
 
 # Trade Orders
 
@@ -59,9 +59,9 @@ Partners can place a trade on behalf of investors. However, for an investor to p
 
 Once the account is confirmed funded, the [BUY trade](api.md#create-transaction)  request can be placed. Partners can check the status of the trade by fetching the [list of  trades](api.md#list-transactions-by-date)  and the [trade details](api.md#fetch-transactions-by-transaction-reference) 
 
-Upon a successful trade request the investor gets an email notification of the trade request and upon execution, the investor also get an email notification.
+Upon a successful trade request the investor gets an email notification of the trade request and upon execution, the investor also gets an email notification.
 
-The investor [cash balance](api.md#fetch-investor39s-balance) is  depleted and his [portfolio size](api.md#fetch-investor39s-portfolio)  increased.
+The investor [cash balance](api.md#fetch-investor39s-balance) is  depleted and his [portfolio size](api.md#fetch-investor39s-portfolio) increased.
 
 ### SELL Trade
 

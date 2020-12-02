@@ -13,6 +13,9 @@
   * [**Trade Orders**](home.md#trade-orders)
 
   * [**API Documentation**](api.md#before-you-start)
+    * [Authentication](api.md#authentication)
+    * [Errors](api.md#errors)
+    * [Access Token](api.md#access-token)
     * [Investors](api.md#Investors)  
       * [Create Investor](api.md#create-investor)
       * [Upload KYC](api.md#upload-kyc)
@@ -28,7 +31,7 @@
       * [Market News](api.md#market-news)
       * [Symbols List](api.md#symbols-list)
       * [Price List](api.md#price-list)
-    * [Transactions](api.md#Transactions)
+    * [Trade orders](api.md#Transactions)
       * [Create Transaction](api.md#create-transaction)
       * [List Transactions by Date](api.md#list-transactions-by-date)
       * [Fetch Transactions by Transaction Reference](api.md#fetch-transactions-by-transaction-reference)

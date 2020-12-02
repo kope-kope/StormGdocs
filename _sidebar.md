@@ -14,7 +14,7 @@
 
   <br>
 
-  * [**API Documentation**](api.md)
+  * [**API Documentation**](api.md#before-you-start)
     * [Investors](api.md#Investors)  
       * [Create Investor](api.md#create-investor)
       * [Upload KYC](api.md#upload-kyc)

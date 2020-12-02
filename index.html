@@ -6,29 +6,32 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <link
+<link rel="stylesheet" href="./css/style.css"/>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css"/>
+<link
       href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;300&display=swap"
       rel="stylesheet"
     />
-  <link rel="stylesheet" href="./css/grid.css"/>
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/docsify/4.11.6/themes/vue.min.css" integrity="sha512-loz6WMDfAB7GhN0FpY3cSO2hdZyRhkjauRPWv4XKnJAC6Dagp2UAwM79KFLqZ48E9arCUPWDvdBaGJl60igm5g==" crossorigin="anonymous" />
 </head>
 <body>
   <div id="app">Please wait...</div>
   <script>
     window.$docsify = {
       name: 'Dart Invest APIs',
-      homepage: 'home.md',
-      themeColor: "#3F51B5",
+      homepage: 'home.md',    
       loadSidebar: true,
-      search: {
-        maxAge: 3600000,
-        paths: 'auto',
-        placeholder: 'Search',
-        noData: 'No Results!',
-        depth: 1
-      }
+      tabs: {
+          persist: true,
+          sync: true,
+          theme: "material",
+          tabComments: true,
+          tabHeadings: true,
+        },
+        copyCode: {
+          buttonText: "Copy to clipboard",
+          errorText: "Error",
+          successText: "Copied",      
+        }
     }
   </script>
 <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
@@ -44,6 +47,9 @@
 <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-latex.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-sql.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-json.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
 <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
+<script src="https://unpkg.com/docsify-copy-code@2"></script>
  </body>
 </html>

@@ -38,10 +38,15 @@ In addition to the this, you can 
 Just before your investors start trading, they would require market information to make a BUY or SELL trade decision. Dart Invest grants you access to critical trade and market information. These include:
 
 1. [Top Gainers](api.md#top-gainers-information)
+
 2. [Top Losers](api.md#top-losers-information)
+
 3. [Real-time Market News](api.md#market-news)
+
 4. [Trade Symbols](api.md#symbols-list)
+
 5. [Price List](api.md#price-list)
+
 Information gotten from the Market information  are used as direct and indirect inputs or factors use in placing trade requests.
 
 # Trade Orders
@@ -50,7 +55,7 @@ As a Partner you can place BUY or SELL Trades for investors. Trades are typicall
 
 ### BUY Trade
 
-Partners can place a trade on behalf of investors. However, for an investor to place a trade, he needs to have his virtual cash account funded. The virtual cash account can be funded by making a funds transfer to the Virtual NUBAN of the investor.  To confirm the receipt of payment into the virtual cash account, you can [GET the balance](#api.md#fetch-investor39s-balance) of the investor.
+Partners can place a trade on behalf of investors. However, for an investor to place a trade, he needs to have his virtual cash account funded. The virtual cash account can be funded by making a funds transfer to the Virtual NUBAN of the investor.  To confirm the receipt of payment into the virtual cash account, you can [GET the balance](api.md#fetch-investor39s-balance) of the investor.
 
 Once the account is confirmed funded, the [BUY trade](api.md#create-transaction)  request can be placed. Partners can check the status of the trade by fetching the [list of  trades](api.md#list-transactions-by-date)  and the [trade details](api.md#fetch-transactions-by-transaction-reference) 
 
@@ -60,7 +65,7 @@ The investor [cash balance](api.md#fetch-investor39s-balance) is  depleted and h
 
 ### SELL Trade
 
-In a similar order an investor can place [SELL trades](api.md#create-transaction) . This depletes the [investor portfolio]((api.md#fetch-investor39s-portfolio)) and increases his [cash balance](api.md#fetch-investor39s-balance) 
+In a similar order an investor can place [SELL trades](api.md#create-transaction) . This depletes the [investor portfolio](api.md#fetch-investor39s-portfolio)) and increases his [cash balance](api.md#fetch-investor39s-balance) 
 
 ### Transactions
 

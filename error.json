@@ -1,0 +1,46 @@
+            {
+                "id": 130,
+                   "receipt_ref": "116hov1qki797mo9",
+                   "transaction_ref": "999af0ea-7264-4c2f-93aa-e96c83d19192",
+                   "investor_id": "cb8dfdde-7b95-4d8a-bc77-34d19c22f7b7",
+                   "investor_no": "48496885",
+                   "status": "open",
+                   "amount": null,
+                   "cscs_number": "0130580258",
+                   "instructions": "Buy me this",
+                   "trade_date_limit": "12-02-2020",
+                   "trade_effective_date": "12-02-2020",
+                   "trade_price_limit": 0,
+                   "trade_action": "BUY",
+                   "stock_code": "DANGCEM",
+                   "trade_units": "2",
+                   "confirmed_quantity": null,
+                   "message": null,
+                   "trade_date": null,
+                   "created_at": "2020-12-02T10:14:59.722Z",
+                   "updated_at": "2020-12-02T10:15:03.407Z"
+               }
+ 
+               {
+                "id": 130,
+                "receipt_ref": "116hov1qki797mo9",
+                "transaction_ref": "999af0ea-7264-4c2f-93aa-e96c83d19192",
+                "investor_id": "cb8dfdde-7b95-4d8a-bc77-34d19c22f7b7",
+                "investor_no": "48496885",
+                "status": "",
+                "amount": 463.5364,
+                "cscs_number": "0130580258",
+                "instructions": "Buy me this",
+                "trade_date_limit": "12-02-2020",
+                "trade_units": "2",
+                "confirmed_quantity": 2,
+                "message": "",
+                "trade_date": "2020-12-02%2000:00:00.0",
+                "created_at": "2020-12-02T10:14:59.722Z",
+                "updated_at": "2020-12-02T10:15:32.903Z"
+            }
+
+
+            https://api.staging.storm.trium.ng/partners/investors/callback/548281d2-ceda-4f50-b6ce-4da20ef924ad?customerId=142280&emailAdd=obaroikohb@gmail.com
+
+            https://api.staging.storm.trium.ng/partners/investors/callback/60914a70-b74d-446a-b9bf-e2cde71a9738?customerId=141835&emailAdd=adedeji@olowe.com

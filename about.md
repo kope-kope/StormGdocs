@@ -1,2 +1,3 @@
 # About Dart Invest
+***
 Dart Invest provides brokerage and trading services via APIs enabling businesses to buy and sell Nigerian equities for their customers. We provide realtime market data for all securities listed on the Nigerian Stock Exchange

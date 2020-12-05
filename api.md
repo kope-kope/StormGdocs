@@ -3,6 +3,7 @@
 > You should include `/test ` in the URL when using test keys,for example,`https://api.staging.storm.trium.ng/test/transactions`.
 
 # Example Requests
+***
 We give sample API calls close to every endpoint using cURL. You simply have to insert your specific values, and you can test the calls from the command line. You can [read this article](https://www.baeldung.com/curl-rest) to learn how to use cURL with APIs.
 
 Not familiar with cURL? You can use [Postman](https://www.postman.com/downloads/). Postman is a collaboration environment for API development including making HTTP requests. Run the [Dart Invest APIs Collection](https://documenter.getpostman.com/view/11930516/TVYF6xeD) in Postman to make testing quicker and easier.
@@ -149,7 +150,7 @@ request(options, function (error, response) {
 
 # Investors
 ***
-The investors API alllows you to create investors, upload the relevant KYC documents and manage investors. The API also serves important information about the investor including its cash balance and portfolio.
+The investors API endpoints alllows you to create investors, upload the relevant KYC documents and manage investors. The API also serves important information about the investor including its cash balance and portfolio.
 
 ### Create Investor
 ***
@@ -260,7 +261,7 @@ request(options, function (error, response) {
 ***
 *PUT* `/partners/investors/:investorId/kyc`
 
-Upload investors' KYC documents with this API. The file size limit per upload is set to 10MB. If successful, the status of the investor is updated to `pending_kyc_approval`. 
+Upload investors' KYC documents with this endpoint. The file size limit per upload is set to 10MB. If successful, the status of the investor is updated to `pending_kyc_approval`. 
 
 ### Headers
 | Field           | Data type | Description                         |
@@ -325,7 +326,7 @@ request(options, function (error, response) {
 ***
 *PUT* `/partners/investor/:id`
 
-A simple HTTP PUT request to the investors API and you can update the details for an investor within few seconds. However, this will be successful for an `Active` investor
+A simple HTTP PUT request to the investors' endpoint and you can update the details for an investor within few seconds. However, this will be successful for an `Active` investor
 
 ### Headers
 | Field           | Data type | Description                         |
@@ -412,7 +413,7 @@ request(options, function (error, response) {
 ***
 *PUT* `/partners/investor/status/:id`
 
-As a partner, the investor API allows you to activate or deactivate an investor, set the status to `true` to activate an investor, `false` to deactivate an investor. 
+As a partner, this investor API endpoint allows you to activate or deactivate an investor, set the status to `true` to activate an investor, `false` to deactivate an investor. 
 
 ## Headers
 | Field           | Data type   | Description                         |
@@ -892,7 +893,7 @@ request(options, function (error, response) {
   # Market Information
   ***
 
-  Dart Invest's market information API provides market data from the Nigerian Stock Exchange to your investors get e.g top gainers, top losers, market news, list of all symbols and their prices.
+  Dart Invest's market information API endpoints provides market data from the Nigerian Stock Exchange to your investors get e.g top gainers, top losers, market news, list of all symbols and their prices.
 
   ## Top Gainers
   ***
@@ -1264,7 +1265,7 @@ request(options, function (error, response) {
 
 # Transactions
 ***
-The transactions API allows you to submit BUY and SELL trade requests at any time, monitor these requests and cancel at will. Once an order is placed, it stays open till it is executed as instructed, these requests can be further queried by the specified transaction reference.
+The transactions API endpoints allow you to submit BUY and SELL trade requests at any time, monitor these requests and cancel at will. Once an order is placed, it stays open till it is executed as instructed, these requests can be further queried by the specified transaction reference.
 
 ## Create Transaction
 ***

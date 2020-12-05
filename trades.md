@@ -1,8 +1,9 @@
 # Trade Orders
+***
 
 As a Partner you can place BUY or SELL Trades for investors. Trades are typically executed within the trade-window of the NSE which is between 10AM and 2:20PM GMT+01:00 on workdays (Monday to Friday) except on public holidays. Trade requests made outside this window are queued for the next available trade-window. For example, trades placed on a Saturday are automatically queued for the next workday.
 
-BUY Trade
+#### BUY Trade
 
 Partners can place a trade on behalf of investors. However, for an investor to place a trade, he needs to have his virtual cash account funded. The virtual cash account can be funded by making a funds transfer to the Virtual NUBAN of the investor.  To confirm the receipt of payment into the virtual cash account, you can [GET the balance](#api.md#fetch-investor39s-balance) of the investor.
 
@@ -12,7 +13,7 @@ Upon a successful trade request the investor gets an email notification of the t
 
 The investor [cash balance](api.md#fetch-investor39s-balance) is  depleted and his [portfolio size](api.md#fetch-investor39s-portfolio)  increased.
 
-SELL Trade
+#### SELL Trade
 
 In a similar order an investor can place [SELL trades](api.md#create-transaction) . This depletes the [investor portfolio]((api.md#fetch-investor39s-portfolio)) and increases his [cash balance](api.md#fetch-investor39s-balance) 
 

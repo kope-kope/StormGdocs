@@ -1,4 +1,5 @@
 # Market Information
+***
 Just before your investors start trading, they would require market information to make a BUY or SELL trade decision. Dart Invest grants you access to critical trade and market information. These include
 
 1. [Top Gainers](api.md#top-gainers-information)

@@ -16,7 +16,7 @@ body:not(.ready) [data-cloak] {
   display: none;
 }
 div#app {
-  font-size: 30px;
+  font-size: 20px;
   font-weight: lighter;
   margin: 40vh auto;
   text-align: center;
@@ -115,7 +115,7 @@ li input[type="checkbox"] {
 .app-nav a:hover {
   color: var(--theme-color, #ff7276);
 }
-.app-nav a.active {
+.app-nav a:active {
   border-bottom: 2px solid var(--theme-color, #ff7276);
 }
 .app-nav li {
@@ -215,26 +215,26 @@ main.hidden {
   margin: 0 auto 1rem;
   font-size: 1.5rem;
   font-weight: 300;
-  text-align: center;
 }
 .sidebar > h1 a {
-  color: inherit;
+  color: #ff7276;
   text-decoration: none;
 }
 .sidebar > h1 .app-nav {
-  display: block;
+  display: bloc;;
   position: static;
 }
 .sidebar .sidebar-nav {
   line-height: 2em;
-  padding-bottom: 40px;
+  padding-bottom: 50px;
+  color:  #ff7276;
 }
 .sidebar li.collapse .app-sub-sidebar {
   display: none;
 }
 .sidebar ul {
-  margin: 0 0 0 15px;
-  padding: 0;
+  padding: 1;
+  color: #ff7176;
 }
 .sidebar li > p {
   font-weight: 700;
@@ -279,6 +279,12 @@ main.hidden {
   z-index: 30;
   cursor: pointer;
 }
+.sidebar-background{
+  color: #ffffff
+}
+.sidebar-nav-link-background-color--active{
+  color: #ff7176;
+}        
 .sidebar-toggle:hover .sidebar-toggle-button {
   opacity: 0.4;
 }
@@ -620,9 +626,6 @@ body {
   padding-right: 4px;
   float: left;
 }
-.markdown-section h1 {
-  color: #3d8fd1
-}
 .markdown-section h2,
 .markdown-section h3,
 .markdown-section h4,
@@ -637,6 +640,10 @@ body {
 .markdown-section h1 {
   font-size: 2rem;
   margin: 0 0 1rem;
+  color: #ff7276;
+}
+.markdown-section h1--color{
+  color: #5f7270;
 }
 .markdown-section h2 {
   font-size: 1.5rem;

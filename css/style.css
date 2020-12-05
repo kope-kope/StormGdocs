@@ -1072,15 +1072,16 @@ outline: 0 !important;
 }
 
 .homepage-category-box {
-  padding: 20px;
+  padding: 10px;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.25);
   display: block;
-  border-radius: 4px;
+  border-radius: 1px;
+  height: 80px;
 }
 
 .homepage-category-links {
-  margin-top: 20px;
-  margin-bottom: 20px !important;
+  margin-top: 10px;
+  margin-bottom: 10px !important;
 }
 
 .homepage-category-box h2 {

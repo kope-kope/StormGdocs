@@ -1,6 +1,6 @@
 # About Dart Invest
 ***
-Dart Invest is a securities and brokerage API platform for retail customer aggregators (such as banks, fintech) developed by Woven Finance in partnership with Coronation Securities, a registered brokerage firm with the Nigerian Stock Exchange.
+Dart Invest is a securities and brokerage API platform for retail customer aggregators (such as banks, fintech) developed by [Woven Finance](https://woven.finance/) in partnership with [Coronation Securities](https://www.coronationsl.com/), a registered brokerage firm with the [Nigerian Stock Exchange](http://www.nse.com.ng/).
 
 Dart Invest provides securities and brokerage services using a technology-driven approach. Dart Invest robust and easy-to-use APIs allow trade partners access to brokerage services in the African market starting with the Nigerian Stock Exchange. With Dart Invest, trade partners such as Banks, Fintechs, and other App Owners can integrate easily to the APIs to allow their users to: 
 

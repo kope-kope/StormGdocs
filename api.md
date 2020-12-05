@@ -10,6 +10,7 @@ Not familiar with cURL? You can use [Postman](https://www.postman.com/downloads/
 ***
 
 # Requests and Responses
+***
 The request and response bodies are formatted in JSON. The Content-type for all responses is set to `application/JSON`. 
 Successful and Error responses are in the following formats:
 
@@ -43,7 +44,7 @@ The error key contains the custom error code defined and the description of the 
 ****
 
 # Authentication
-
+***
 API requests must be made over HTTPS.
 API calls are further authenticated by including your access token in the authorization header of every request.
 
@@ -57,6 +58,7 @@ Authorization headers should be set in this format: `Authorization: Bearer acces
 ****
 
 # Errors
+***
 We use standard HTTP response codes for success and failure notifications. In general, 200 HTTP codes correspond to success, 40X codes are for developer- or user-related failures which are further classified with custom error codes, and 50X codes are for Dart Invest-related issues.
 
 #### Sample Error Schema
@@ -75,6 +77,7 @@ We use standard HTTP response codes for success and failure notifications. In ge
 ***
 
 # Access Token
+***
 
 *POST* `/token`
 

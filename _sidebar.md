@@ -5,8 +5,8 @@
 </div>
 
 
-  
-  * [**Introduction**](home.md#Introduction)
+  * [**Home**](index.md)
+  * [**About Dart Invest**](about.md)
   * [**Getting Started**](home.md#getting-started)
   * [**Investor Accounts**](home.md#investors39-account)
   * [**Market Information**](home.md#market-information-amp-symbols)

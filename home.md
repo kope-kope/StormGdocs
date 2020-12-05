@@ -72,4 +72,3 @@ The investor's transaction history can be fetched via [APIs](api.md#Fetch-Transa
 
 
 
-

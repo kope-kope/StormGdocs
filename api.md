@@ -82,7 +82,7 @@ We use standard HTTP response codes for success and failure notifications. In ge
 
 *POST* `/token`
 
-This API allows you to generate an access token, for authorizing other API calls.
+This endpoint allows you to generate an access token, for authorizing other API calls.
 
 ### Authorization
 
@@ -1545,7 +1545,7 @@ request(options, function (error, response) {
 
 *GET* `/transactions/:transactionRef`
 
-The transactions API gives you the capability to cancel a trade before it is executed as instructed. 
+This endpoint gives you the capability to cancel a trade before it is executed as instructed. 
 
 ### Headers
 | Field           | Data type   | Description                         |

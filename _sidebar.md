@@ -23,6 +23,7 @@
       * [Change Status](api.md#change-status)
       * [Get all details](api.md#get-all-details)
       * [Get details by ID](api.md#get-details-by-id)
+      * [Get transactions](api.md#get-transactions)
       * [Get Balance ](api.md#get-balance)
       * [Get Portfolio](api.md#get-portfolio)
     * [Market Information](api.md#market-information)
@@ -33,7 +34,7 @@
       * [Price List](api.md#price-list)
     * [Transactions](api.md#Transactions)
       * [Create Transaction](api.md#create-transaction)
-      * [Get Transactions by Date](api.md#get-transactions-by-date)
+      * [Get All Transactions by Date](api.md#get-transactions-by-date)
       * [Get Transaction details](api.md#get-transaction-details)
       * [Cancel Transactions](api.md#cancel-transactions)
 

@@ -1,6 +1,6 @@
 # Getting Started 
 ***
-To get started as a trade partner on Dart Invest, Sign up on www.dart.invest and provide all the valid KYC documentation. While you wait for the approval of your partnership sign-up, you can commence integration with the test keys. Upon approval, you would be able to fetch live keys.
+To get started as a trade partner on Dart Invest, Sign up on the [console](https://dartinvest.com/) and provide all the valid KYC documentation. While you wait for the approval of your partnership sign-up, you can commence integration with the test keys. Upon approval, you would be able to fetch live keys.
 
 Dart Invest console also allows you to access your transaction metrics and performance via the dashboard, manage investors' back-office support requests, and much more.
 
@@ -42,7 +42,7 @@ This is the apex regulator within the capital market. It licenses all parties an
 <div class="col homepage-category-box">
 <h2><colored>Nigerian Stock Exchange (NSE)</h2>
 <br>
-     <p>
+<p>
 This is the biggest equities trading exchange in Nigeria. It’s founded and licensed by the SEC in 1961 to operate as an exchange. It trades equities and other forms of securities. To clear a common misconception, the NSE is a private organization. To learn more, visit <a href = "http://www.nse.com.ng/" target = "_self">the official website</a>
     </p>
 </div>

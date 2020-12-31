@@ -1119,3 +1119,89 @@ display: -webkit-flex;
   margin: 10px;
   align-items: stretch;
 }
+
+.flat-table table {
+  border-collapse: collapse;
+  width: 100%;
+  display: inline-table;
+}
+
+.flat-table .card {
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+.flat-table td {
+  padding: 1.2rem;
+  border: 0;
+}
+.flat-table th{
+  border: 0;
+  text-align: left;
+  background-color: #f9fbfd;
+  text-transform: uppercase;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  border-bottom-width: 1px;
+  border-top-width: 0;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+ td lead {
+  border: 0;
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+.flat-table tr {
+  border-top: 1px solid #eee;
+}
+
+.flat-table thead > tr {
+  border: 0;
+}
+.table-sm{
+  font-size: 0.9rem;
+}
+.flat-table.table-sm{
+  padding: 1rem !important;
+}
+
+.card-table table {
+  display: inline-table;
+  width: 100%;
+}
+.card-table thead {
+  display: none;
+}
+
+.card-table tr:nth-child(1) {
+  border: 0;
+}
+
+.card-table tr:nth-child(1) > td:nth-child(1) {
+  border-top: 0;
+  border-left: 0;
+}
+.card-table tr:nth-child(1) > td:nth-child(2) {
+  border-top: 0;
+  border-right: 0;
+}
+
+.card-table tr:nth-child(2) > td:nth-child(1) {
+  border-bottom: 0;
+  border-left: 0;
+}
+.card-table tr:nth-child(2) > td:nth-child(2) {
+  border-bottom: 0;
+  border-right: 0;
+}
+.card-table td {
+  width: 50%;
+  padding: 2rem;
+  line-height: 1.5rem;
+}

@@ -1054,7 +1054,93 @@ request(options, function (error, response) {
 ```
   <!-- tabs:end -->
   ***
+## Account Statement
+***
+*GET* `/partners/investors/:investorId/statement?start_date=2020-05-11&end_date=2021-01-29`
 
+Fetch investor's brokerage account statement within a specified date range
+
+### Headers
+
+<div class="flat-table"><div class="card table-sm"><div class="card-body">
+
+| Field           | Data type   | Description                         |
+|---------------  |---------- |------------------------------------ |
+| Authorization   | String    | Set value to Bearer `access_token`  |
+
+</div></div></div>
+
+### Query Param
+
+<div class="flat-table"><div class="card table-sm"><div class="card-body">
+
+| Field           | Data type   | Description                                                                                           |
+|---------------  |-----------  |-----------------------------------------------------------------------------------------------------  |
+| start_date    | Datetime            | Date should be in format **YYYY-MM-DD**                                                    |
+| end_date    | Datetime            | Date should be in format **YYYY-MM-DD**                                                    |
+
+</div></div></div>
+
+<!-- tabs:start -->
+
+#### ** cURL **
+
+``` bash
+curl -X GET https://api.woven.finance/bi/v1/partners/investors/:investor_id/statement
+-H "Authorization: Bearer access_token"
+```
+#### ** Node **
+
+``` javascript
+var request = require('request');
+var options = {
+  'method': 'GET',
+  'url': 'https://api.woven.finance/bi/v1/partners/investors/:investor_id/statement',
+  'headers': {
+    'authorization': 'Bearer access_token'
+  }
+};
+request(options, function (error, response) {
+  if (error) throw new Error(error);
+  console.log(response.body);
+});
+
+});
+
+
+```
+#### ** Response **
+
+``` json
+{
+    "status": 200,
+    "data": [
+        {
+            "txn_date": "2/1/2021 11:43:21 AM",
+            "effective_date": "2/1/2021 12:00:00 AM",
+            "description": "Stock Purchase: 50 WAPIC @NGN0.59 for A/C 142243",
+            "amount": "-34.3402",
+            "ledger_type": "NGN",
+            "trans_type": "STKBBUY",
+            "ref_01": "172245",
+            "batch_no": "0",
+            "branch_code": "000"
+        },
+        {
+            "txn_date": "2/1/2021 11:41:38 AM",
+            "effective_date": "2/1/2021 12:00:00 AM",
+            "description": "Stock Purchase: 54 WAPIC @NGN0.59 for A/C 142243",
+            "amount": "-36.7434",
+            "ledger_type": "NGN",
+            "trans_type": "STKBBUY",
+            "ref_01": "172264",
+            "batch_no": "0",
+            "branch_code": "000"
+        }
+    ]
+}
+  ```
+  <!-- tabs:end -->
   # Market Information
   ***
 

@@ -26,6 +26,7 @@
       * [Get transactions](api.md#get-transactions)
       * [Get Balance ](api.md#get-balance)
       * [Get Portfolio](api.md#get-portfolio)
+      * [Get Statement](api.md#account-statement)
     * [Market Information](api.md#market-information)
       * [Top Gainers](api.md#top-gainers)
       * [Top Losers](api.md#top-losers)
